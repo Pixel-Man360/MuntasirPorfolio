@@ -923,7 +923,7 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 15%;
     width: 90%;
 }
 
@@ -982,6 +982,12 @@ a{
     background-color: #26222d;
     filter: opacity(70);
     position: relative;
+    width: 90%; /* Set a fixed width */
+    margin: 0 auto;
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    
     /* justify-content: space-between; */
 }
 
@@ -1035,7 +1041,58 @@ a{
     font-size: 16px;
     line-height: 1.6;
     color: white;
-    list-style-type: disc
+    width: 80%; /* Set a fixed width */
+    margin: 0 auto;
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    
+}
+
+
+.project-contributions__text ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 20px; /* Adjust spacing from the left */
+}
+
+/* Custom bullet for main list items */
+.project-contributions__text ul > li {
+    position: relative;
+    padding-left: 30px; /* Space for the custom bullet */
+}
+
+.project-contributions__text ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 10px;  /* Set the width of the bullet */
+    height: 10px; /* Set the height of the bullet */
+    background-color: #00FF94; /* Custom color for the bullet */
+    border-radius: 50%; /* Make the shape circular */
+}
+
+/* Custom bullet for first-level nested list items */
+.project-contributions__text ul ul > li {
+    position: relative;
+    padding-left: 40px; /* Space for the custom bullet */
+}
+
+.project-contributions__text ul ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 10px;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 7px;  /* Smaller size for nested bullets */
+    height: 7px; /* Smaller size for nested bullets */
+    background-color: #59FFB9; /* Different color for nested bullet */
+    border-radius: 0%; /* Square shape for nested bullets */
+}
+
+
+.project-contributions__text b {
+    font-weight: bold;
+    color: #ffffff; /* Optional: Change color to match your design */
 }
 
 @media (max-width: 768px) {
