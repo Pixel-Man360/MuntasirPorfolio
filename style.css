@@ -130,6 +130,7 @@ a{
     z-index: 999;
     background-color: #130717;
     backdrop-filter: blur(25px);
+    opacity: 90%;
 }
 .nav__list{
     display: flex;
@@ -255,6 +256,7 @@ a{
 {
     width: 100%;
     max-width: 700px;
+    padding-bottom: 50px;
 }
 .header__right
 {
@@ -429,15 +431,20 @@ a{
 }
 .work__box{
     border-radius: 7px;
-    padding: 1.5rem;
+    padding: 2rem;
     background-color: #26222d;
     filter: opacity(70);
+
 }
 .work__img-box{
-    width: 100%;
     display: flex;
     border-radius: 7px;
     overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center; 
 }
 .work__img-box img{
     width: 100%;
