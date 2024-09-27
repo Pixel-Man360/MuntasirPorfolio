@@ -941,9 +941,10 @@ a{
 }
 
 .project-title__heading {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     font-weight: 800;
-    font-size: xxx-large;
+    font-size: clamp(4.2rem, 5vw, 4.75rem); /* Adjust this value as necessary */
     text-align: center;
 }
 
@@ -985,7 +986,7 @@ a{
 
 /* Project Details Box */
 .project-details__box {
-    border-radius: 7px;
+    border-radius: 15px;
     padding: 2rem;
     /* margin-top: 20%; */
 
@@ -993,7 +994,7 @@ a{
     background-color: #26222d;
     filter: opacity(70);
     position: relative;
-    width: 90%; /* Set a fixed width */
+    width: 95%; /* Set a fixed width */
     margin: 0 auto;
     display: flex; /* Enable flexbox layout */
     justify-content: center; /* Center content horizontally */
@@ -1033,7 +1034,7 @@ a{
 }
 
 .gallery__item img {
-    width: 90%;
+    width: 70%;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -1052,10 +1053,21 @@ a{
     transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+
+    .gallery__item img {
+        padding-left: 15%;
+        width: 85%; /* Ensure full width for images */
+    }
+}
+
 /* Project Contributions Box */
 .project-contributions__box {
     border-radius: 7px;
-    padding: 1.5rem;
+    padding: 1rem;
     background-color: #26222d;
     filter: opacity(70);
 }
@@ -1075,14 +1087,14 @@ a{
 
 .project-contributions__text ul {
     list-style-type: none; /* Remove default bullets */
-    padding-left: 20px; /* Adjust spacing from the left */
 }
 
 /* Custom bullet for main list items */
 .project-contributions__text ul > li {
     position: relative;
-    padding-left: 30px; /* Space for the custom bullet */
+    padding-left: 20px; /* Space for the custom bullet */
 }
+
 
 .project-contributions__text ul > li::before {
     content: '';  /* Empty content to create a shape */
@@ -1098,18 +1110,92 @@ a{
 /* Custom bullet for first-level nested list items */
 .project-contributions__text ul ul > li {
     position: relative;
-    padding-left: 40px; /* Space for the custom bullet */
+    padding-left: 37.5px; /* Space for the custom bullet */
 }
+
+.project-contributions__text ul ul ul > li {
+    position: relative;
+    padding-left: 17.5px; /* Space for the custom bullet */
+}
+
+.project-contributions__text ul ul ul ul > li {
+    position: relative;
+    padding-left: 17.5px; /* Space for the custom bullet */
+}
+
 
 .project-contributions__text ul ul > li::before {
     content: '';  /* Empty content to create a shape */
     position: absolute;
-    left: 10px;      /* Position the bullet */
+    left: 20px;      /* Position the bullet */
     top: 0.5em;   /* Vertically align the shape */
     width: 7px;  /* Smaller size for nested bullets */
     height: 7px; /* Smaller size for nested bullets */
     background-color: #59FFB9; /* Different color for nested bullet */
     border-radius: 0%; /* Square shape for nested bullets */
+}
+
+.project-contributions__text ul ul ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 10px;  /* Adjusted width */
+    height: 10px; /* Adjusted height */
+    border: 2px solid #59ffcd; /* Border only, with a custom color */
+    background-color: transparent; /* No fill */
+    border-radius: 50%; /* Make the shape circular */
+}
+
+
+.project-contributions__text ul ul ul ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 10px;  /* Adjusted width */
+    height: 10px; /* Adjusted height */
+    border: 2px solid #59deff; /* Border only, with a custom color */
+    background-color: transparent; /* No fill */
+    border-radius: 20%; /* Make the shape circular */
+}
+
+
+@media (max-width: 768px) {
+
+    .project-contributions__text ul > li {
+        padding-left: 0; /* Space for the custom bullet */
+    }
+    
+    .project-contributions__text ul > li::before {
+        left: -20px;      /* Position the bullet */
+    }
+    
+    .project-contributions__text ul ul > li {
+        padding-left: 17.5px; /* Space for the custom bullet */
+    }
+    
+    .project-contributions__text ul ul ul > li {
+        padding-left: 17.5px; /* Space for the custom bullet */
+    }
+    
+    .project-contributions__text ul ul ul ul > li {
+        padding-left: 17.5px; /* Space for the custom bullet */
+    }
+    
+    
+    .project-contributions__text ul ul > li::before {
+        left: 0;      /* Position the bullet */
+    }
+    
+    .project-contributions__text ul ul ul > li::before {
+        left: 0;      /* Position the bullet */
+    }
+    
+    
+    .project-contributions__text ul ul ul ul > li::before {
+        left: 0;      /* Position the bullet */
+    }
 }
 
 
