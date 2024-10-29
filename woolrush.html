@@ -94,16 +94,48 @@
                         <ul>
                             <li><b>I implemented:</b></li>
                             <ul>
-                                <li><b>Building System - </b> Buildings Unlock and Upgrade system (Upgrade works only on specific buildings). 
-                                    Sheep or item receive, and item or cash drop system (Specific buildings will take specific item drops only and players can take items if they have enough capacity). 
-                                    Building specific behaviors such as the wool cutting simulation in the wool station or the breeding simulation in the breeding station and more. </li>
+                                <li><b>Building System - </b>
+                                    <ul>
+                                        <li> Building unlock and upgrade system with cash. Only the restaurants buildings can be upgraded to increase seating area. Player and npc upgrade building will unlock automatically.</li>
+                                        <li> Some buildings have special behaviors such as wool cutting simulation or breeding simulation.</li>
+                                        <li> Restaurants have a service npc inside that will serve the produced foods. Each ingrident dropped into the building will produce a specific number of food.</li>
+                                        <li> Each building has different production time and will produce specific items or cash when specific item or sheep is given. </li>
+                                    
+                                    </ul> 
+                                </li>
+
+                                <li><b>AI System - </b>
+                                    <ul>
+                                        <li> All the AI were created using a custom Finite State Machine System. </li>
+                                        <li> All the AI have a navmesh agent component with different settings each. The navmesh surface for each AI is different for better control. </li>
+                                        <li> <b> Sheep AI: </b> 
+                                            <ul> 
+                                                <li>The sheeps have Idle, Wandering, Fleeing, and Following states. The animations will change according to the states.</li>
+                                                <li> The sheeps can be captured by the player or the helper npc. The sheeps only flee from the player to make the game less chaotic.</li>
+                                                <li> While Idle or Wandering the sheeps will run towards the opposite direction of the player. </li>
+                                                <li> Baby sheeps, wooless sheeps cannnot be captured and that behavior is handled using booleans. Sheeps that are captured and are in the following state cannot be captured either.</li>
+                                            </ul>
+                                       
+                                        
+                                        </li>
+                                        <li> <b> Helper Npc: </b> 
+                                            <ul>
+                                                <li>Helper npcs are hireable from the player upgrade building. They will help the player manage the farm and gather more money. </li>
+                                                <li>Helper npcs have Idle, Wandering, Going towards sheep, Going towards building, Collecting, Going to delivery building, and Dropping states.</li>
+                                                <li>The npcs have 2 major behaviors, catching and dropping sheeps and collecting and dropping items.</li>
+                                                <li>Collecting and dropping items has the most priority.</li>
+                                                <li>During the wandering state the npc will check if there are any buildings that has produced items and pick one randomly (This was handled using a list inside the world manager. 
+                                                    everytime a building produced something it will go into the list and once everything is collected it will come out of the list).</li>
+                                                <li>If there are no pickable items the npc will start chasing after the sheeps.</li>
+                                                <li>The collection of items and sheeps were handled to prioritize the player to handle errors.</li>
+                                                <li>If the items or sheep is already taken, the npc will go to the wandering state again and look for the next task to do.</li>
+                                            </ul>
+                                        </li>
+                                    </ul> 
+                                </li>
                                     
                             </ul>
                             
-                            <li><b>I designed:</b></li>
-                            <ul>
-                                
-                            </ul>
                         </ul>
                     </div>
                 </div>
