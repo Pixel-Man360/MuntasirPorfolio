@@ -348,12 +348,12 @@ a{
     position: relative;
 }
 .header__resume:hover::before{
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
 }
 .header__resume::before{
     content: '';
-    background-color: #00FF94;
+    background-color: #00ff9583;
     width: 120%;
     height: 120%;
     display: block;
@@ -362,7 +362,7 @@ a{
     top: 50%;
     left: 50%;
     z-index: -1;
-    filter: blur(30px);
+    filter: blur(20px);
     transform: translate(-50%, -50%);
 }
 
