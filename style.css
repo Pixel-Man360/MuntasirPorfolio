@@ -121,7 +121,7 @@ a{
  * ==================
  */
 .nav {
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 3rem;
     position: fixed;
     width: 100%;
@@ -129,7 +129,9 @@ a{
     left: 0;
     z-index: 999;
     background-color: #130717;
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
+    opacity: 90%;
 }
 .nav__list{
     display: flex;
@@ -255,6 +257,7 @@ a{
 {
     width: 100%;
     max-width: 700px;
+    padding-bottom: 50px;
 }
 .header__right
 {
@@ -345,12 +348,12 @@ a{
     position: relative;
 }
 .header__resume:hover::before{
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
 }
 .header__resume::before{
     content: '';
-    background-color: #00FF94;
+    background-color: #00ff9583;
     width: 120%;
     height: 120%;
     display: block;
@@ -359,7 +362,7 @@ a{
     top: 50%;
     left: 50%;
     z-index: -1;
-    filter: blur(30px);
+    filter: blur(20px);
     transform: translate(-50%, -50%);
 }
 
@@ -423,21 +426,32 @@ a{
     display: flex;
     flex-wrap: wrap;
 }
+
+.works a
+{
+    text-decoration: none;
+    color: white;
+}
 .work{
     width: 100%;
     padding: 2%;
 }
 .work__box{
     border-radius: 7px;
-    padding: 1.5rem;
+    padding: 2rem;
     background-color: #26222d;
     filter: opacity(70);
+
 }
 .work__img-box{
-    width: 100%;
     display: flex;
     border-radius: 7px;
     overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center; 
 }
 .work__img-box img{
     width: 100%;
@@ -675,6 +689,7 @@ a{
     .work{
         width: 50%;
     }
+
 }
 
 /*
@@ -701,6 +716,7 @@ a{
         max-width: 150px;
         height: 150px;
     }
+    
 }
 
 /*
@@ -729,6 +745,7 @@ a{
         margin-left: auto;
         margin-right: auto;
     }
+    
 }
 
 /*
@@ -742,6 +759,7 @@ a{
         opacity: 1;
         top: 35px;
     }
+    
 }
 
 /*
@@ -906,5 +924,303 @@ a{
     }
     100% {
         clip: rect(87px, 9999px, 63px, 0);
+    }
+}
+
+
+
+.section {
+    padding: 80px 0;
+}
+
+.containerProject {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 90%;
+}
+
+.project-title__info{
+    margin-bottom: 5rem;
+
+}
+
+.project-title__heading {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    font-size: clamp(4.2rem, 5vw, 4.75rem); /* Adjust this value as necessary */
+    text-align: center;
+}
+
+.project-title__subtitle {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-weight: 800;
+    font-size: large;
+    text-align: center;
+}
+
+.project-title__details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    
+}
+
+.project_detail_badges{
+    background-color: #59ffb91c;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.35rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.project-details__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+
+/* Project Details Box */
+.project-details__box {
+    border-radius: 15px;
+    padding: 2rem;
+    /* margin-top: 20%; */
+
+    /* padding-top: 15%; */
+    background-color: #26222d;
+    filter: opacity(70);
+    position: relative;
+    width: 95%; /* Set a fixed width */
+    margin: 0 auto;
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    
+    /* justify-content: space-between; */
+}
+
+.project-details__icon {
+    flex: 0 0 auto; /* Prevents the icon from growing */
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+
+.project-details__text {
+    margin-top: 2rem;
+    font-weight: 800;
+    font-size: x-large;
+}
+
+
+
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 25px;
+    gap: 30px;
+}
+
+.gallery__item {
+    /* overflow: hidden; */
+    align-content: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery__item img {
+    width: 70%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery__item video {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery__item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery__item:hover video {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+
+    .gallery__item img {
+        padding-left: 15%;
+        width: 85%; /* Ensure full width for images */
+    }
+}
+
+/* Project Contributions Box */
+.project-contributions__box {
+    border-radius: 7px;
+    padding: 1rem;
+    background-color: #26222d;
+    filter: opacity(70);
+}
+
+.project-contributions__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    width: 80%; /* Set a fixed width */
+    margin: 0 auto;
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    
+}
+
+
+.project-contributions__text ul {
+    list-style-type: none; /* Remove default bullets */
+}
+
+/* Custom bullet for main list items */
+.project-contributions__text ul > li {
+    position: relative;
+    padding-left: 20px; /* Space for the custom bullet */
+}
+
+
+.project-contributions__text ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 10px;  /* Set the width of the bullet */
+    height: 10px; /* Set the height of the bullet */
+    background-color: #00FF94; /* Custom color for the bullet */
+    border-radius: 50%; /* Make the shape circular */
+}
+
+/* Custom bullet for first-level nested list items */
+.project-contributions__text ul ul > li {
+    position: relative;
+    padding-left: 37.5px; /* Space for the custom bullet */
+}
+
+.project-contributions__text ul ul ul > li {
+    position: relative;
+    padding-left: 17.5px; /* Space for the custom bullet */
+}
+
+.project-contributions__text ul ul ul ul > li {
+    position: relative;
+    padding-left: 17.5px; /* Space for the custom bullet */
+}
+
+
+.project-contributions__text ul ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 20px;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 7px;  /* Smaller size for nested bullets */
+    height: 7px; /* Smaller size for nested bullets */
+    background-color: #59FFB9; /* Different color for nested bullet */
+    border-radius: 0%; /* Square shape for nested bullets */
+}
+
+.project-contributions__text ul ul ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 10px;  /* Adjusted width */
+    height: 10px; /* Adjusted height */
+    border: 2px solid #59ffcd; /* Border only, with a custom color */
+    background-color: transparent; /* No fill */
+    border-radius: 50%; /* Make the shape circular */
+}
+
+
+.project-contributions__text ul ul ul ul > li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 10px;  /* Adjusted width */
+    height: 10px; /* Adjusted height */
+    border: 2px solid #59deff; /* Border only, with a custom color */
+    background-color: transparent; /* No fill */
+    border-radius: 20%; /* Make the shape circular */
+}
+
+
+@media (max-width: 768px) {
+
+    .project-contributions__text ul > li {
+        padding-left: 0; /* Space for the custom bullet */
+    }
+    
+    .project-contributions__text ul > li::before {
+        left: -20px;      /* Position the bullet */
+    }
+    
+    .project-contributions__text ul ul > li {
+        padding-left: 17.5px; /* Space for the custom bullet */
+    }
+    
+    .project-contributions__text ul ul ul > li {
+        padding-left: 17.5px; /* Space for the custom bullet */
+    }
+    
+    .project-contributions__text ul ul ul ul > li {
+        padding-left: 17.5px; /* Space for the custom bullet */
+    }
+    
+    
+    .project-contributions__text ul ul > li::before {
+        left: 0;      /* Position the bullet */
+    }
+    
+    .project-contributions__text ul ul ul > li::before {
+        left: 0;      /* Position the bullet */
+    }
+    
+    
+    .project-contributions__text ul ul ul ul > li::before {
+        left: 0;      /* Position the bullet */
+    }
+}
+
+
+.project-contributions__text b {
+    font-weight: bold;
+    color: #ffffff; /* Optional: Change color to match your design */
+}
+
+@media (max-width: 768px) {
+    .project-title__details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-title__icon {
+        margin-bottom: 1rem;
+    }
+
+    .project-title__info {
+        text-align: center;
     }
 }
