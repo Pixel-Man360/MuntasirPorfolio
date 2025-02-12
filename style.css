@@ -89,7 +89,7 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 85%;
 }
 .section{
     display: flex;
@@ -122,7 +122,7 @@ a{
  */
 .nav {
     padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -131,7 +131,7 @@ a{
     background-color: #130717;
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-    opacity: 90%;
+    opacity: 80%;
 }
 .nav__list{
     display: flex;
@@ -257,7 +257,7 @@ a{
 {
     width: 100%;
     max-width: 700px;
-    padding-bottom: 50px;
+    padding-bottom: 2px;
 }
 .header__right
 {
