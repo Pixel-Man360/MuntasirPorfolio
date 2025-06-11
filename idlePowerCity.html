@@ -56,10 +56,10 @@
                         <div class="project-title__info">
                             <span class="project_detail_badges"> Genre: Idle Arcade, Hybrid-Casual, City Builder </span>
                             <span class="project_detail_badges"> Platform: Android </span>
-                            <span class="project_detail_badges"> Game Idea: </span>
                             <span class="project_detail_badges"> Role: Game Developer </span>
                             <span class="project_detail_badges"> Technology Used: Unity, C# </span>
-                            <span class="project_detail_badges"> Final Release Date:  </span>
+                            <span class="project_detail_badges"> Soft Launched by: <a href="https://www.mondayoff.me/" class="link"> MondayOff</a>  </span>
+                            <span class="project_detail_badges"> Short Description: Idle Power city is a 3d idle arcade mobile game where the players are required to build a city and keep it running by collecting and dropping power resources.</span>
                             <a href="https://play.google.com/store/apps/details?id=com.bigbang.mythictrail" class="header__resume">Play</a>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="gallery__item">
                             <video width="600" height="300" controls>
-                                <source src="" type="video/mp4">
+                                <source src="./assets/works/Professional Projects/Idle Power City/IPC 2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -83,13 +83,13 @@
 
                     <div class="gallery">
                         <div class="gallery__item">
-                            <img src="./assets/gallery/image1.jpg" alt="Project Image 1">
+                            <img src="./assets/works/Professional Projects/Idle Power City/SS1.png" alt="Project Image 1">
                         </div>
                         <div class="gallery__item">
-                            <img src="./assets/gallery/image2.jpg" alt="Project Image 2">
+                            <img src="./assets/works/Professional Projects/Idle Power City/SS2.png" alt="Project Image 2">
                         </div>
                         <div class="gallery__item">
-                            <img src="./assets/gallery/image3.jpg" alt="Project Image 3">
+                            <img src="./assets/works/Professional Projects/Idle Power City/SS3.png" alt="Project Image 3">
                         </div>
                         <!-- Add more gallery items as needed -->
                     </div>
@@ -103,23 +103,118 @@
                                     <ul> 
                                         <li><b>Player Behavior- </b>
                                             <ul>
-                                                <li> details</li>
-                                                
+                                                <li> Joystick based top-down all directional movement system.</li>
+                                                <li> Player can interact with the world using different triggers and colliders.</li>
+                                                <li> Player can pick up energy cells, fuels and rocket fuels, drop them, and interact with buildings. Made a custom bezier curve system for the collection and dropping arc.</li>
+                                                <li> Player has a limited but upgradable number of stack capacity and movement speed.</li>
+                                                <li> The main goal for the player is to unlock different areas and grow the city.</li>
                                             </ul> 
+                                            
+                                        <li><b>Building System- </b>
+                                            <ul>
+                                                <li> Building unlock and upgrade system with cash. The HR building and the ship doc will unlock automatically.</li>
+                                                <li> Each resource building will generate different resource items such as Energy cells, Fuels, Rocket Fuels etc.</li>
+                                                <li> All other buildings have npcs that will react to the buildings being active/deactive.</li>
+                                                <li> Buildings are needed to be activated by the player or helper npcs using the cells or fuels to generate money.</li>
+                                                <li> Shops have a service npc inside that will serve the produced foods. Each ingrident dropped into the building will produce a specific number of food.</li>
+                                                <li> Each building will produce cash based on the time they are active. </li>
+                                                <li> There HR building is an upgrade buiding for the player to upgrade character stats, hire npc helpers and upgrade their stats too.</li>
+                                            
+                                            </ul> 
+
+                                            <li><b>Mission/Quest System- </b>
+                                                <ul>
+                                                    <li> The mission system is there to guide the players and give them clear goals.</li>
+                                                    <li> Each mission gives some rewards to the player and completing one or more missions will make the player be able to unlock the next building or next task.</li>
+                                                    <li> Daily missions unlocks after completing a certain number of missions.</li>
+                                                    <li> Three Daily missions are randomly generated. Completing each mission yields a reward and completing all three gives a grand reward.</li>
+                                                    <li> Daily missions reset every 24 hours while the main missions never resets.</li>
+                                                </ul> 
                                     </ul> 
                                     </li>
                                 </li>
 
-                                <li><b>Group of systems:-</b>
-                                    <ul> 
-                                        <li><b>System name- </b>
+                                <li><b>AI Systems:- </b>
+                                    <ul>
+                                        <li> All the AI were created using a custom Finite State Machine System. </li>
+                                        <li> All the AI that has movement have a navmesh agent component with different settings each while the static ones don't have any navmesh. The navmesh surface is same for all moving NPCs (Helpers and Shop customers).</li>
+
+                                        <li> <b> Helper Npc- </b> 
                                             <ul>
-                                                <li>details.</li>
-                                                
-                                            </ul> 
+                                                <li> Helper npcs are hireable from the player upgrade building. They will help the player manage the farm and gather more money. </li>
+                                                <li> Helper npcs have Idle, Wandering, Going towards resource building, Collecting, Going to delivery building, and Dropping states.</li>
+                                                <li> The npcs have 2 major behaviors, collecting resources and dropping items.</li>
+                                                <li> During the wandering state the npc will select a delivery building which is inactive. If all the buildings are active then randomly select one. After selecting
+                                                    the delivery building the npc then selects the corresponding resource building and changes the state to Going towards resource building.</li>
+                                                <li> The collection of items were handled to prioritize the player to handle errors.</li>
+                                                <li> Once collection is done (finite stack capacity), the npc state is then Going to delivery building. After reaching the building the npc will drop the resources, and restart the cycle.</li>
+                                                <li> Helper npcs have limited but upgradable number of speed and stack capacity and can be hired a limited number.</li>
+                                            </ul>
+                                        </li>
+
+                                        <li> <b> Customer Npc- </b> 
+                                            <ul> 
+                                                <li> The customers (both humans and boats) have Idle, Wandering, Going towards shop, Waiting to Collect, Collecting, Moving to despawn area.</li>
+                                                <li> There is a spawning system for the customers where each shop can hold a limited number of queue. </li>
+                                                <li> At the begining of a customer life cycle, they will choose what to order based on available shops. Each customer may order multiple items and move to multiple shops. </li>
+                                                <li> The boat will order a certain energy source.</li>
+                                            </ul>
+                                        </li>
+
+                                        <li> <b> Misc Npcs- </b> 
+                                            <ul> 
+                                                <li> These are all the npcs that are inside the buildings that require activation.</li>
+                                                <li> Each npc has different behaviors and will work accordingly. </li>
+                                                <li> Static npcs will not move. Moving npcs will move inside a certain area. </li>
+                                                <li> The train station has a simulation of train coming and going and npcs moving in and out of it. </li>
+                                                <li> The gas station has cars as npcs. The car behaviors were done using Unity splines</li>
+                                                <li> The factory has a truck and a worker as npc. The factory generates some items which are carried by the worker to the truck. Once the truck is filled it goes away and another truck arrives.</li>
+                                                <li> The rocket station has no npc. The rocket moves and stays out for a certain amount of time.</li>
+                                              
+                                            </ul>
+                                        </li>
                                     </ul> 
-                                    </li>
                                 </li>
+
+                                <li><b>UI Systems:-</b>
+                                    <ul> 
+                                        <li><b>Popups- </b>
+                                            <ul>
+                                                <li> All sorts of popups including settings, upgrade and hire popup, ads or IAP popup etc. </li>
+                                            </ul> 
+                                        </li>
+                                    </ul>
+
+                                    <ul> 
+                                        <li><b>World UI- </b>
+                                            <ul>
+                                                <li> Unlock, Upgrade, Collect and, Drop area UIs for player interactions. </li>
+                                            </ul> 
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li><b>Monetization Systems:-</b>
+                                    <ul> 
+                                        <li><b>Ads- </b>
+                                            <ul>
+                                                <li> Banner, Interstital and, Rewarded ads were implemented using the max sdk. </li>
+                                                <li> There are some Rewarded video items placed on the playing field to give extra boost to the players. The rewards include cash, items and increased player speed, capacity and the production time of the buildings.</li>
+                                                <li> Each resource building also has an ad button to get many items faster. </li>
+                                                <li> The ads were placed in a way that it doesn't disturb the player experience.</li>
+
+                                            </ul> 
+
+                                        <li><b>In-App Purchases- </b>
+                                            <ul>
+                                                <li> Only the ads removal IAP was implemented.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    
+                         </ul>
+                            
+                        </ul>
                 </div>
             </div>
         </div>
