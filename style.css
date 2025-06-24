@@ -1168,6 +1168,11 @@ a{
     border-radius: 20%; /* Make the shape circular */
 }
 
+.project-contributions__text ul > p {
+    font-size: larger;
+
+}
+
 
 @media (max-width: 768px) {
 
