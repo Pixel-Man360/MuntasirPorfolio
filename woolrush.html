@@ -52,19 +52,21 @@
                     <h4 class="project-title__heading">Wool Rush: Sheep Farm Empire</h4>
                     <p class="project-title__subtitle">Big Bang Studio Ltd.</p>
                     <div class="project-title__details">
-                        <img src="assets/works/Professional Projects/Wool Rush/WoolRushIcon.png" class="project-title__icon" alt="Project Icon" style="width: 35%;">
+                        <img src="assets/works/Professional Projects/Wool Rush/WoolRushIcon.png" class="project-title__icon" alt="Project Icon" style="width: 40%;">
                         <div class="project-title__info">
                             <span class="project_detail_badges"> Genre: Idle Arcade, Hybrid-Casual, Farming </span>
                             <span class="project_detail_badges"> Platform: Android </span>
-                            <span class="project_detail_badges"> Game Idea: An simple sheep farming idle arcade style game </span>
                             <span class="project_detail_badges"> Role: Game Developer </span>
                             <span class="project_detail_badges"> Technology Used: Unity, C# </span>
-                            <span class="project_detail_badges"> Final Release Date: June 2024 </span>
+                            <span class="project_detail_badges"> Soft Launched by: <a href="https://www.funtory.com/"> Funtory</a> </span>
+                            <span class="project_detail_badges"> Short Description: Wool Rush is a 3d idle arcade mobile game where the players are required to grow their sheep farm.</span>
                             <a href="https://play.google.com/store/apps/details?id=com.bigbang.woolrush" class="header__resume">Play</a>
                         </div>
                     </div>
+
+                    <br>
                     
-                    <h4 class="project-title__heading">Gallery</h4>
+                    <h4 class="project-title__heading">Gameplay</h4>
                     <div class="gallery">
                         <div class="gallery__item">
                             <video width="600" height="300" controls>
@@ -80,21 +82,14 @@
                         </div>
                     </div>
 
-                    <div class="gallery">
-                        <div class="gallery__item">
-                            <img src="./assets/works/Professional Projects/Wool Rush/P1.png" alt="Project Image 3">
-                        </div>
-                        <div class="gallery__item">
-                            <img src="./assets/works/Professional Projects/Wool Rush/P8.png" alt="Project Image 3">
-                        </div>
-                        <div class="gallery__item">
-                            <img src="./assets/works/Professional Projects/Wool Rush/P9.png" alt="Project Image 3">
-                        </div>
-                    </div>
+                    <br> <br> <br> 
+      
 
                     <h4 class="project-title__heading">My Contributions</h4>
                     <div class="project-contributions__text">
                         <ul>
+                            <p> 🚀 This was a three man operation. Other than myself there was another programmer and 2 artists. I did the development part of the project solo.</p>
+                            <br>
                             <li><b>I implemented:</b></li>
                             <ul>
                                 <li><b>Core Gameplay Systems:-</b>
@@ -115,6 +110,9 @@
                                                 <li> Restaurants have a service npc inside that will serve the produced foods. Each ingrident dropped into the building will produce a specific number of food.</li>
                                                 <li> Each building has different production time and will produce specific items or cash when specific item or sheep is given. </li>
                                                 <li> There is an upgrade buiding for the player to upgrade character stats, hire npc helpers and upgrade their stats too.</li>
+                                                <li> I made the item dropping and collecting system using triggers and coroutines. This method made it more performant as there were very few update loops.</li>
+                                                <li> I used Unity's scriptable objects to create all the building data.</li>
+                                                
                                             
                                             </ul> 
 
@@ -123,6 +121,7 @@
                                                     <li> The mission system is there to guide the players and give them clear goals.</li>
                                                     <li> Each mission gives some rewards to the player and completing one or more missions will make the player be able to unlock the next building or next task.</li>
                                                     <li> Daily and side missions where planned but were never executed further.</li>
+                                                    <li> I used Unity's scriptable object to keep track of each mission and it's next mission. The progress tracked using events and then saved and loaded using mission Id and the save load manager.</li>
                                                 </ul> 
                                     </ul> 
                                     </li>
@@ -204,6 +203,24 @@
                                             </ul>
                                         </li>
                                     </ul>
+
+                                    <li> <b> Level Design:-</b>
+                                        <ul>
+                                            <li> The levels are divided into 3 different areas. Each area has a somewhat different theme and different buildings.</li>
+                                            <li> The main area was the ship farm. The second area was a festival ground for selling all items while the third area was a restaurant area.</li>
+                                            <li> There were some outside blocked area as well for visuals.</li>
+                                            <li> The buildings and props were placed in each of the area manually.</li>
+                                        </ul>
+                                    </li>
+    
+                                    <li> <b> Misc:-</b>
+                                        <ul>
+                                            <li> Custom water shader using the Shader Graph for the entire map.</li>
+                                            <li> Custom behind the wall glow shader using the Shader Graph for better visuals.</li>
+                                            <li> Lighting and camera controls.</li>
+                                            <li> Particles and FX.</li>
+                                        </ul>
+                                    </li>
                                     
                          </ul>
                             

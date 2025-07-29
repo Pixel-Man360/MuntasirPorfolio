@@ -89,7 +89,7 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 85%;
 }
 .section{
     display: flex;
@@ -122,7 +122,7 @@ a{
  */
 .nav {
     padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -131,7 +131,7 @@ a{
     background-color: #130717;
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-    opacity: 90%;
+    opacity: 80%;
 }
 .nav__list{
     display: flex;
@@ -257,7 +257,7 @@ a{
 {
     width: 100%;
     max-width: 700px;
-    padding-bottom: 50px;
+    padding-bottom: 2px;
 }
 .header__right
 {
@@ -927,8 +927,6 @@ a{
     }
 }
 
-
-
 .section {
     padding: 80px 0;
 }
@@ -1087,18 +1085,21 @@ a{
     display: flex; /* Enable flexbox layout */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    
+
+
 }
 
 
 .project-contributions__text ul {
     list-style-type: none; /* Remove default bullets */
+    margin-bottom: 2.8em; /* Add spacing between list items */
 }
 
 /* Custom bullet for main list items */
 .project-contributions__text ul > li {
     position: relative;
     padding-left: 20px; /* Space for the custom bullet */
+    margin-bottom: 1rem; /* Add spacing between list items */
 }
 
 
@@ -1111,6 +1112,7 @@ a{
     height: 10px; /* Set the height of the bullet */
     background-color: #00FF94; /* Custom color for the bullet */
     border-radius: 50%; /* Make the shape circular */
+   
 }
 
 /* Custom bullet for first-level nested list items */
@@ -1137,7 +1139,7 @@ a{
     top: 0.5em;   /* Vertically align the shape */
     width: 7px;  /* Smaller size for nested bullets */
     height: 7px; /* Smaller size for nested bullets */
-    background-color: #59FFB9; /* Different color for nested bullet */
+    background-color: #ffb73b; /* Different color for nested bullet */
     border-radius: 0%; /* Square shape for nested bullets */
 }
 
@@ -1148,7 +1150,7 @@ a{
     top: 0.5em;   /* Vertically align the shape */
     width: 10px;  /* Adjusted width */
     height: 10px; /* Adjusted height */
-    border: 2px solid #59ffcd; /* Border only, with a custom color */
+    border: 2px solid #ff59e3; /* Border only, with a custom color */
     background-color: transparent; /* No fill */
     border-radius: 50%; /* Make the shape circular */
 }
@@ -1164,6 +1166,11 @@ a{
     border: 2px solid #59deff; /* Border only, with a custom color */
     background-color: transparent; /* No fill */
     border-radius: 20%; /* Make the shape circular */
+}
+
+.project-contributions__text ul > p {
+    font-size: larger;
+
 }
 
 
