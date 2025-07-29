@@ -116,6 +116,8 @@
                                                 <li> Shops have a service npc inside that will serve the produced foods. Each ingrident dropped into the building will produce a specific number of food.</li>
                                                 <li> Each building will produce cash based on the time they are active. </li>
                                                 <li> There HR building is an upgrade buiding for the player to upgrade character stats, hire npc helpers and upgrade their stats too.</li>
+                                                <li> I made the cash dropping and collecting system using triggers and coroutines. This method made it more performant as there were very few update loops.</li>
+                                                <li> I used Unity's scriptable objects to create all the building data.</li>
                                             
                                             </ul> 
 
@@ -126,6 +128,7 @@
                                                     <li> Daily missions unlocks after completing a certain number of missions.</li>
                                                     <li> Three Daily missions are randomly generated. Completing each mission yields a reward and completing all three gives a grand reward.</li>
                                                     <li> Daily missions reset every 24 hours while the main missions never resets.</li>
+                                                    <li> I used Unity's scriptable object to keep track of each mission and it's next mission. The progress tracked using events and then saved and loaded using mission Id and the save load manager.</li>
                                                 </ul> 
                                     </ul> 
                                     </li>

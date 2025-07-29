@@ -114,22 +114,76 @@
                                                 <li> If all the temporary slots are filled, that level is lost.</li>
                                                 <li> If a box is filled, another box of a different color will come forward. If the temporary slots have any card of the same color and/or element, it gets filled immediately.</li>
                                                 <li> The cards will be sorted by color into the temporary card slots.</li>
+                                                <li> This gameplay system was created using Unity Hinge joint. I connected the cards and pins using hinge joints to allow for smooth movement and interaction. Turning of a joint makes the card rotate and fall.</li>
 
                                             </ul> 
                                     </ul> 
                                     </li>
                                 </li>
 
-                                <li><b>Group of systems:-</b>
+                                <li><b>Powerup systems:-</b>
                                     <ul> 
-                                        <li><b>System name- </b>
+                                        <li><b>Extra pin slot powerup- </b>
                                             <ul>
-                                                <li>details.</li>
-                                                
+                                                <li>Clicking this powerup gave an extra pin slot to the players.</li>
+                                                <li>This was done by having a predefined hidden pin which was activated when the powerup was clicked.</li>
                                             </ul> 
                                     </ul> 
+
+                                     <ul> 
+                                        <li><b>Extra card slot powerup- </b>
+                                            <ul>
+                                                <li>Clicking this powerup gave an extra card slot to the players.</li>
+                                                <li>This was done by having a predefined hidden card slot which was activated when the powerup was clicked.</li>
+                                            </ul> 
+                                    </ul> 
+
+                                      <ul> 
+                                        <li><b>Hammer powerup- </b>
+                                            <ul>
+                                                <li>Clicking this powerup makes the pins scale up and down. When pin is clicked, a hammer spawns and hits the pin and it disappears.</li>
+                                            </ul> 
+                                    </ul> 
+                                    
+
                                     </li>
+                                    
                                 </li>
+                                </ul>
+
+                            <li><b>I designed:</b></li>
+                            <ul>
+                                <li><b>Editor Tools:-</b>
+                                    <ul> 
+                                        <li><b>Level Design tool- </b>
+                                            <ul>
+                                                <li> The level design was a repeatative process. To save time I made 2 different editor tools. </li>
+                                                <li> The first tool was responsible for setting up the hinge joints, rigidbodies and colliders for each card and pin. This made connecting a card to a pin or another card easier.</li>
+                                                <li> The second tool was responsible for setting up the visual layers for each of the 2d cards (as some cards had to stay on top of others).</li>
+                                                <li> I used Unity's scriptable object system for the level data such as number of briefcase, what type and color of cards each briefcase slot contained and whether or not it's a harder level.</li>
+
+                                            </ul> 
+                                    </ul> 
+
+                                    <li><b>Main Menu:-</b>
+                                    <ul> 
+                                        <li><b>Level scrolling- </b>
+                                            <ul>
+                                                <li> The level scroller was created using sliders and some calculations to determine the spacing between each level.</li>
+                                                <li> Hard levels had different graphics to indicate their difficulty.</li>
+                                            </ul> 
+
+                                        <li><b>Spin Wheel- </b>
+                                        <ul>
+                                            <li> The spin wheel was created to give players some powerups or coins as reward.</li>
+                                            <li> The wheel was created using Unity's UI system. The spinning effect was done using dotween. I divided the wheel into 8 sections and each section had a different reward.</li>
+                                            <li> When the spin button is pressed, a section is randomly chosen. Then I calculated the number of rotation required to get to a slot by using 360 / slotCount formula. Then I just added some offset for the spin count and that acted as the duration.</li>
+                                            <li> The spinning ease out was done using dotween.</li>
+                                            <li> I modified the sfx for the spin using Audacity and made it as long as the spin duration.  </li>
+                                        </ul> 
+                                    </ul> 
+
+                                
                 </div>
             </div>
         </div>
