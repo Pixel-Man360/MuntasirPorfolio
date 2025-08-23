@@ -92,14 +92,17 @@
                         <ul>
                             <p> 🚀 This was a four man operation. Other than myself there was another programmer and 2 artists. I started the project solo on the prototype phase and then led the project development as more teammates joined in.</p>
                             <br>
+                            <p><b>🎯 My Goal for this Project</b> 
+                            <br> My goal was to design and develop a scalable idle/city-building gameplay loop, where resource generation, missions, and AI-driven helpers come together to create long-term player engagement. This project was also meant to test how well I could handle system complexity while ensuring performance and clarity in code structure.</p>
+                            <br>
+                            <p><b>✅ How I Achieved It</b></p>
 
-                            <li><b>I implemented:</b></li>
                             <ul>
                                 <li><b>Core Gameplay Systems:-</b>
                                     <ul> 
                                         <li><b>Player Behavior- </b>
                                             <ul>
-                                                <li> Joystick based top-down all directional movement system.</li>
+                                                <li> Developed Joystick based top-down all directional movement system.</li>
                                                 <li> Player can interact with the world using different triggers and colliders.</li>
                                                 <li> Player can pick up energy cells, fuels and rocket fuels, drop them, and interact with buildings. Made a custom bezier curve system for the collection and dropping arc.</li>
                                                 <li> Player has a limited but upgradable number of stack capacity and movement speed.</li>
@@ -108,7 +111,7 @@
                                             
                                         <li><b>Building System- </b>
                                             <ul>
-                                                <li> Building unlock and upgrade system with cash. The HR building and the ship doc will unlock automatically.</li>
+                                                <li> Implemented a modular Building system unlock and upgrade with cash. The HR building and the ship doc will unlock automatically.</li>
                                                 <li> Upgrading each building gives 2 options for the visuals. A free option and a premium option which can be redeemed with RV.</li>
                                                 <li> Each resource building will generate different resource items such as Energy cells, Fuels, Rocket Fuels etc.</li>
                                                 <li> All other buildings have npcs that will react to the buildings being active/deactive.</li>
@@ -116,19 +119,19 @@
                                                 <li> Shops have a service npc inside that will serve the produced foods. Each ingrident dropped into the building will produce a specific number of food.</li>
                                                 <li> Each building will produce cash based on the time they are active. </li>
                                                 <li> There HR building is an upgrade buiding for the player to upgrade character stats, hire npc helpers and upgrade their stats too.</li>
-                                                <li> I made the cash dropping and collecting system using triggers and coroutines. This method made it more performant as there were very few update loops.</li>
-                                                <li> I used Unity's scriptable objects to create all the building data.</li>
-                                            
+                                                <li> Made the cash dropping and collecting system using triggers and coroutines. This method made it more performant as there were very few update loops.</li>
+                                                <li> Used Unity's scriptable objects to create all the building data.</li>
+
                                             </ul> 
 
                                             <li><b>Mission/Quest System- </b>
                                                 <ul>
-                                                    <li> The mission system is there to guide the players and give them clear goals.</li>
+                                                    <li> Designed the mission system to guide the players and give them clear goals.</li>
                                                     <li> Each mission gives some rewards to the player and completing one or more missions will make the player be able to unlock the next building or next task.</li>
                                                     <li> Daily missions unlocks after completing a certain number of missions.</li>
                                                     <li> Three Daily missions are randomly generated. Completing each mission yields a reward and completing all three gives a grand reward.</li>
                                                     <li> Daily missions reset every 24 hours while the main missions never resets.</li>
-                                                    <li> I used Unity's scriptable object to keep track of each mission and it's next mission. The progress tracked using events and then saved and loaded using mission Id and the save load manager.</li>
+                                                    <li> Used Unity's scriptable object to keep track of each mission and it's next mission. The progress tracked using events and then saved and loaded using mission Id and the save load manager.</li>
                                                 </ul> 
                                     </ul> 
                                     </li>
@@ -136,7 +139,7 @@
 
                                 <li><b>AI Systems:- </b>
                                     <ul>
-                                        <li> All the AI were created using a custom Finite State Machine System. </li>
+                                        <li> All the AI were engineered using a custom Finite State Machine System. </li>
                                         <li> All the AI that has movement have a navmesh agent component with different settings each while the static ones don't have any navmesh. The navmesh surface is same for all moving NPCs (Helpers and Shop customers).</li>
 
                                         <li> <b> Helper Npc- </b> 
@@ -231,7 +234,16 @@
                                     </ul>
                                 </li>
                          </ul>
-                            
+
+                         <p><b>📚 What I Learned</b></p>
+
+                            <ul>
+                            <li><b>Game System Architecture (First Exposure):</b> Learned how to structure interconnected gameplay systems (missions, AI, buildings) so they remain flexible and maintainable.</li>
+                            <li><b>FSM-based AI Implementation:</b> Built my first Finite State Machine AI for helpers and customers, giving me a strong foundation in AI state management.</li>
+                            <li><b>Event-Driven Progress Tracking:</b> Gained hands-on experience using Scriptable Objects + Events for mission progression and persistence, which became the backbone of the game’s flow.</li>
+                            <li><b>Team Leadership:</b> Since I initiated the prototype and later led development, I learned how to transition from solo prototyping to leading a small team, aligning programmers and artists under a shared vision.</li>
+                            <li><b>Monetization Integration (First Time):</b> Implemented ads/IAP for the first time, gaining an understanding of balancing player experience with revenue systems.</li>
+                            <li><b>Content Scaling Challenges:</b> Encountered and overcame issues with unlockable areas and multiple resource types, teaching me how to design systems that could scale with more complexity.</li>
                         </ul>
                 </div>
             </div>
