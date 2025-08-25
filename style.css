@@ -1168,6 +1168,18 @@ a{
     border-radius: 20%; /* Make the shape circular */
 }
 
+.project-contributions__text ul ul ul ul ul> li::before {
+    content: '';  /* Empty content to create a shape */
+    position: absolute;
+    left: 0;      /* Position the bullet */
+    top: 0.5em;   /* Vertically align the shape */
+    width: 8px;  /* Adjusted width */
+    height: 8px; /* Adjusted height */
+    border: 2px solid #7a61ec; /* Border only, with a custom color */
+    background-color: #7a61ec; /* No fill */
+    border-radius: 50%; /* Make the shape circular */
+}
+
 .project-contributions__text ul > p {
     font-size: larger;
 
