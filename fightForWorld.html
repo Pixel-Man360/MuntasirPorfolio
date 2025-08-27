@@ -87,24 +87,216 @@
                     <h4 class="project-title__heading">My Contributions</h4>
                     <div class="project-contributions__text">
                         <ul>
-                            <li><p> 🚀 This was a four man operation. Other than myself there was another programmer and 2 artists. I started with the player behavior while the other programmer started with the enemy behavior. The artists were responsible for modelling the characters, weapons and turrets. This was our biggest and longest project to date. 
-                                It had a lot of iterations and many changes throughout development. But the core gameplay and idea stayed as it is. Just the game design and art and vfx changed from time to time.</p></li>
-                            
-                            <!-- <li><b>I implemented:</b></li>
+                            <p> 🚀 This was a four man operation. Other than myself there was another programmer and 2 artists. I started with the player behavior while the other programmer started with the enemy behavior. The artists were responsible for modelling the characters, weapons and turrets. This was our biggest and longest project to date. 
+                                It had a lot of iterations and many changes throughout development. But the core gameplay and idea stayed as it is. Just the game design and art and vfx changed from time to time.</p>
+                            <br>
+                            <p><b>🎯 My Goal for this Project</b> 
+                            <br>
+                            <p>My goal was to develop a large-scale, feature-rich mobile action game that combined real-time combat, deep progression systems, and monetization features. 
+                                I was put into this project to grow beyond smaller prototypes and learn how to design modular systems that could scale across dozens of features while still feeling cohesive. 
+                                Another key goal was to refine my skills in gameplay systems and UI/UX design, since this project required one of the most advanced systems and also the most comprehensive and player-friendly interfaces I had built so far.</p>
+                            <br>
+                            <p><b>✅ How I Achieved It</b></p>
                             <ul>
                                 <li><b>Core Gameplay Systems:-</b>
                                     <ul> 
-                                        <li><b>Player Behavior- </b>
+                                        <li><b>Base Player Behavior- </b>
                                             <ul>
-                                                <li> Joystick based semi top-down all directional movement system.</li>
+                                                <li> Implemented Joystick based semi top-down all directional movement system.</li>
                                                 <li> Player can interact with the world using different triggers and colliders.</li>
-                                                <li> Player auto targetting and shooting was implemented using a sphere collider trigger for performance and simplicity.</li>
-                                                <li> There was an internal capsule collider for the player which was used for interactions with the turret unlock or upgrade zones, attacks zones and enemies.</li>
-                                                <li> The in game resource for unlocking and upgrading the turrets was radiation token (Green). I made a system where the current area will start with a fixed amount of tokens and enemies would drop a certain amount of radiation tokens.</li>
                                                 <li> The collection and dropping of the tokens by the player were implemented with a custom bezier curve system for smooth animations and performance (Used coroutines).</li>
-                                            </ul>  -->
+                                            </ul> 
 
-                                            <li><b>This section is under development. Details will be coming soon. Please checkout the gameplay for now and try the game.</b></li>
+                                            <li><b>Toxic area system- </b>
+                                            <ul>
+                                                <li> Each area of a world is separated by a safe zone and a toxic zone. Safe zones are where players can place turrets and heal themselves. The first area is always safe. </li>
+                                                <li> We can start the fight when the player enters the fight area and the wave starts.</li>
+                                                <li> Implemented a system where player takes damage over time when entering a toxic area. Players will get an 8 seconds force field for safety. After that they will take damage quickly.</li>
+                                                <li> Implemented a generator system as a temporary safe zone that players can activate using Radiation Tokens to heal themselves and stop the toxic damage.</li>
+                                            </ul> 
+
+
+                                            <li><b>Champion System- </b>
+                                            <ul>
+                                                <li> Implemented a champion system where players can unlock and upgrade unique champions to play with.</li>
+                                                <li> Players can choose from a pool of 4 champions to play with.</li>
+                                                <li> Each champion are available after finishing a world and/or area. After that players need to unlock them with Gems or Ads. The first champion <b>Master Rick</b> is unlocked by default.</li>
+                                                <li> Each champion has distinct abilities and playstyles, encouraging diverse strategies.</li>
+                                                <li> Players can level up their champions through player fragments and coins gained from battle rewards, chests and shop.</li>
+                                                <li> Each champion has a special ability called Frenzy mode which triggers after killing a certain number of enemies. During frenzy mode each champion uses their own unique special skills. 
+                                                    I didn't implement their behaviors but I added the VFX and SFX for champion abilities to enhance gameplay immersion</li>
+                                            </ul> 
+
+                                             <li><b>Gun System- </b>
+                                            <ul>
+                                                <li> Implemented a versatile gun system that supports multiple weapon types.</li>
+                                                <li> Each weapon has unique stats such as damage, fire rate, and reload time.</li>
+                                                <li> Each weapon unlocks after finishing a certain world and/or area (The first weapon is unlocked by default). </li>
+                                                <li> Players can pick a weapon out of 6 different weapons from the weapons tab in the main menu.</li>
+                                                <li> Designed a weapon upgrade and rank up system that allows players to enhance their weapons' stats.</li>
+                                                <li> There are 4 different ranks for each weapon which are common (Blue), Rare (Green), Epic (Orange), Legendary (Red), each increasing the level cap.</li>
+                                                <li> Players can upgrade weapons using coins and rank up weapons using weapon fragments gained from battle rewards, chests and shop.</li>
+                                                <li> Added a skin system for 3 specific guns. All of them had a unique skin which would unlock from daily login or can be bought.</li>
+                                                <li> Each skin has its own VFX and animations. </li>
+                                                <li> Added VFX and SFX for upgrading and rank up for each gun and also added UI and VFX to show each rank.</li>
+                                                <li> I didn't implement the shooting system but I added the VFX and SFX for shooting, hitting and damage number and also designed different projectiles and audio for different guns.</li>
+                                            </ul> 
+
+                                            <li><b>Turret System-</b></li>
+                                            <ul>
+                                                <li> Implemented a turret system that allows players to deploy stationary turrets at fixed positions in battle.</li>
+                                                <li> Designed unique behaviors for 7 turrets out of 12. </li>
+                                                <li> Added unique VFX and SFX for projectiles or abilities for all turrets.</li>
+                                                <li> Engineered a deck system for turrets where players can pick 6 turrets out of 12 available options on the turret section of the player tab in the main menu.</li>
+                                                <li> When a player drops enough radiation token (Resource to unlock turrets) inside an unlock area, a popup is shown to pick 2 different turrets from the deck pool. The first is free while the second has a cost.</li>
+                                                <li> Players can refresh the options for free or with ads.</li>
+                                                <li> Picking an option drops the selected turret into the area.</li>
+                                                <li> Players can upgrade the turret in game to increase a turret's ability and visuals. They can also upgrade the base stats of a turret using coins and specific turret fragments found from battle rewards, chests and shop.</li>
+                                                <li> Used unity's scriptable objects to manage the base and upgradable stats of each turret.</li>
+                                            </ul>
+
+                                            <li><b>Skill Tree System-</b></li>
+                                            <ul>
+                                                <li>The linear skill tree system was made to boost the player base/payload. I was in charge of updating the existing UI and VFX and integrating the system into gameplay.</li>
+                                            </ul>
+
+                                            <li><b>Tutorial System-</b></li>
+                                            <ul>
+                                                <li>Implemented a simple gameplay tutorial system to guide players through the basics of each mechanics or what to do during gameplay.</li>
+                                                <li>Also Implemented a main menu tutorial system by expanding the existing one to guide players into using all the main menu features such as gacha equipment equipping, champion upgradding, gun equip and upgrade and so on.</li>
+                                            </ul>
+
+                                            <li><b>Currency System-</b></li>
+                                            <ul>
+                                                <li>Created a modular currency system that allows players to earn and spend in-game currency.</li>
+                                                <li>There were a total of 6 different types of currency and one gameplay resource.</li>
+                                                <li>Each currency type has its own unique use and can be earned through various gameplay activities.</li>
+                                                <li>The currencies include: 
+                                                    <ul>
+                                                        <li>Gold. Used everywhere.</li>
+                                                        <li>Gems. Used to buy chests and unlock champions.</li>
+                                                        <li>Player Fragments. Used to upgrade champions.</li>
+                                                        <li>Turret Fragments. Used to upgrade turrets. Each turret has a unique fragment type can be used on that specific turret only.</li>
+                                                        <li>Weapon Fragments. Used to upgrade weapon rank.</li>
+                                                        <li>Radiation Token. This is a gameplay resource collected by killing enemies and used to unlock turrets and generators and upgrade turrets during gameplay.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+
+                                            <li><b>Gacha / Equipment System-</b></li>
+                                            <ul>
+                                                <li>Implemented a gacha system for acquiring new equipment for the champions</li>
+                                                <li>There are a total of 6 different equipments, each with its own unique abilities.</li>
+                                                <li>Each equipment has 4 different ranks similar to the guns. Each rank increases the equipment's stats.</li>
+                                                <li>Added a system to craft a higher ranked equipment by merging 3 same ranked and type equipments. Players can also equip or unequip any one of the equipment in their specified slots.</li>
+                                                <li>Added vfx and sfx for crafting and equipping equipments.</li>
+                                                <li>Used Unity's scriptable objects to define stats and abilities for each equipment type and rank. </li>
+                                                <li>The 6 equipments are:
+                                                <ul>
+                                                        <li>Dog Tag. Increases critical chance and for non-common ranks increases fire range.</li>
+                                                        <li>Knife. Increases attack damage and for non-common ranks increases attack of specific weapons.</li>
+                                                        <li>Bandage. Increases self-heal amount and for non-common ranks increases self-heal amount of payload/player base.</li>
+                                                        <li>Gas mask. Increases forcefield duration of the generators and for non-common ranks decreases toxic damage taken.</li>
+                                                        <li>Vest. Decreases enemy damage taken and for non-common ranks decreases toxic damage taken.</li>
+                                                        <li>Boots. Increases movement speed and for non-common ranks creates an attack dodge chance where the player gets no damage.</li>
+                                                </ul>
+                                                </li>
+
+                                            </ul>
+
+                                            <li><b>Powerups System-</b></li>
+                                            <ul>
+                                                <li>Created a powerup system that gives an extra boost to the players when fighting. Each has their own cooldown.</li>
+                                                <li>Used unity's scriptable objects to define the powerups and their effects.</li>
+                                                <li>Implemented 4 out of 6 powerup behaviors.</li>
+                                                <li>Similar to the turret deck system I created a system where players can pick at most 2 out of 6 powerups. The option was added inside the player tab in the main menu.</li>
+                                                <li>Added vfx and sfx for the selections and some of the powerup activations such as Ice grenade and mines etc.</li>
+                                            </ul>
+
+                                            <li><b>Misc-</b></li>
+                                            <ul>
+                                                <li>Added an indicator system on the ground which shows the distance and direction of the attack area, enemy bases and generators when necessary.</li>
+                                                <li>The player base movement was implemented using Unity Spline. Some of the level designs were also done using Spline.</li>
+                                                <li>Implemented a world end cinematic where the payload/player base moves towards the mother base of the enemy, opens hatchet to reveal turret, charges up and fires. Then camera pans to the mother base, it gets destroyed and the end result screen pops up after some sfx.</li>
+                                                <li>Implemented end result screens of both win and lost and also the reward system for both.</li>
+                                                <li>Implemented a centralized reward system along with an <b>internal API</b>which is used in many parts of the game. Mostly on the main menu where different rewards are given.</li>
+                                            </ul>
+                                </ul>
+
+                                  <li><b>UI Systems:-</b>
+                                    <ul>
+                                        <li>🚀 I designed and implemented most of the UI systems in the game. I used the GUI pro survival pack provided by the studio for this one. This is my best UI work and I'm proud of it.</li>
+                                        <li>The reset and time system for every single reward is made using C# DateTime. There is a calculation for week passed as well.</li>
+                                        <br>
+                                        <li>Main menu Shop-</li>
+                                        <ul>
+                                            <li>Implemented a basic main menu shop on the shop tab to buy rewards, claim free rewards or watch ads to get rewards. Everything resets after 24 hrs.</li>
+                                        </ul>
+                                        <li><b>Missions-</b></li>
+                                        <ul>
+                                            <li>Implemented a mission system where players can complete tasks for rewards.</li>
+                                            <li>Created a user-friendly interface for the mission tab with clear objectives and rewards.</li>
+                                            <li>Used Unity's scriptable objects to define daily and weekly missions and all mission complete rewards.</li>
+                                        </ul>
+                                        <li><b>Chest-</b></li>
+                                        <ul>
+                                            <li>Implemented instant chests inside shops and also battle reward chests that opens after a certain amount of time. </li>
+                                            <li>Created the entire chest opening and unlock animation sequences using Dotween.</li>
+                                            <li>Added vfx and sfx for every effect.</li>
+                                        </ul>
+                                        <li><b>Feature Unlocked System-</b></li>
+                                        <ul>
+                                            <li>Created a modular system to showcase when a new main menu feature such as player Upgrade, weapon upgrade, shop and so on has unlocked.</li>
+                                            <li>Made this system fully <b>modular</b> so that it can be used in other projects as well. In fact this feature was used in 4 different project after this one.</li>
+                                        </ul>
+                                        <li><b>Daily loging reward-</b></li>
+                                        <ul>
+                                            <li>Used unity's scriptable systems to create a pool of 4 weeks worth of data. Each data gets reset after 7 days and each reward item is claimable after logging in the next day.</li>
+                                        </ul>
+                                        <li><b>7 day win rewards-</b></li>
+                                        <ul>
+                                            <li>Created a 7-day win reward system where players can earn increasing rewards for consecutive wins (5 win max).</li>
+                                        </ul>
+                                        <li><b>Offline rewards-</b></li>
+                                        <ul>
+                                            <li>Implemented an offline reward system where players can earn rewards for being offline for a certain period of time.</li>
+                                        </ul>
+                                        <li><b>Player Profile-</b></li>
+                                        <ul>
+                                            <li>Created a player profile system where players can view their progress, change avatars and their user name.</li>
+                                        </ul>
+                                        <li><b>Main Menu design-</b></li>
+                                        <ul>
+                                            <li>Designed the entire main menu layout and navigation for a user-friendly experience.</li>
+                                            <li>Separated 5 different views with 5 different tabs in the bottom part.</li>
+                                            <li>The battle view shows the current world name and background and also the selected champion.</li>
+                                        </ul>
+                                    </ul>
+
+                                    <li> <b> Level Design:-</b></li>
+                                        <ul>
+                                            <li>Designed areas for world 1, 3, 5 and 6 out of 8. Each world has around 5 - 7 areas.</li>
+                                        </ul>
+
+                                        <li><b>Monetization Systems:-</b>
+                                    <ul> 
+                                        <li><b>Ads- </b>
+                                            <ul>
+                                                <li> Implemented and placed rewarded ads using the Homa SDK in various parts of the game to enhance player engagement and retention.</li>
+
+                                            </ul> 
+
+                            <p><b>📚 What I Learned</b></p>
+                            <ul>
+                            <li><b>Large-Scale System Integration:</b> Learned how to design and implement a wide range of interconnected systems (combat, champions, weapons, turrets, currencies, missions, rewards) while keeping them modular and manageable.</li>
+                            <li><b>Scalability & Modularity:</b> Built several reusable systems (feature unlock system, currency handling, reward API, Skill tree, Deck system) that were later adopted across multiple projects.</li>
+                            <li><b>Progression & Live-Ops Design:</b> Gained deep experience in creating player progression loops (missions, upgrades, chests, login rewards, ads) and balancing them for engagement and monetization.</li>
+                            <li><b>UI/UX Mastery:</b>This project pushed my UI design skills to their best yet — I learned to design complex menu flows and views, modular reward timers, mission interfaces, popups, and shops while ensuring clarity and ease of use.</li>
+                            <li><b>Iteration & Adaptability:</b>Since this was a long-running project with way too many design/art overhauls, I learned how to adapt systems flexibly without breaking core mechanics.</li>
+
+                        </ul>
+                                
+
                 </div>
             </div>
         </div>
