@@ -54,26 +54,21 @@
                         <span class="header__title-1" data-role="GAME DEVELOPER">Game Programmer</span>
                     </h1>
 
-                    <br>
-
-                    <h1 class="header__position">
-                        <span>Note: This site is currently under development. Some of the updates will be coming soon.</span>
-                    </h1>
                 </div>
 
             <div class="container">
                 <ul id="navList" class="nav__list">
                     <li class="nav__list-item">
-                        <a class="nav__list-link active" href="#heroHeader">Home();</a>
+                        <a class="nav__list-link active" href="#heroHeader">Home()</a>
                     </li>
                     <li class="nav__list-item">
-                        <a class="nav__list-link" href="#work">Work Projects();</a>
+                        <a class="nav__list-link" href="#work">Work Projects()</a>
                     </li>
                     <li class="nav__list-item">
-                        <a class="nav__list-link" href="#personal">Personal Projects();</a>
+                        <a class="nav__list-link" href="#personal">Personal Projects()</a>
                     </li>
                     <li class="nav__list-item">
-                        <a class="nav__list-link" href="#skills">Skills();</a>
+                        <a class="nav__list-link" href="#skills">Skills()</a>
                     </li>
                 </ul>
             </div>
@@ -89,7 +84,7 @@
 
                 <img src="./assets/illustrations/me.jpg" width="250" height="250" style="border-radius: 50%;" alt="Mridul"/>
 
-                <p class="header__msg"> Game Developer with 3.5+ years of professional experience and 5+ years of overall expertise in Unity, C#, and C++. Specializing in gameplay programming, AI development, and performance optimization, with a strong foundation in object-oriented programming, level design, and UI/UX. Passionate about creating immersive, high-performance games with engaging mechanics and scalable architecture.
+                <p class="header__msg"> Game Developer with 4+ years of professional experience and 6+ years of overall expertise in Unity, C#, and C++. Specializing in gameplay programming, AI development, and performance optimization, with a strong foundation in object-oriented programming, level design, and UI/UX. Passionate about creating immersive, high-performance games with engaging mechanics and scalable architecture.
                 </p>
 
                 <a href="https://drive.google.com/file/d/1iwVkoVUhu1g0NMvTOUqVPp4YdziD6nat/view?usp=sharing" class="header__resume">Resume</a>
@@ -289,97 +284,123 @@
     <section id="personal" class="section container">
         <h2 class="section__title">Personal Projects</h2>
         <br> <br> <br> <p> 🚀 This section is under development. I will add project details, screenshots and playable links soon. For now you can checkout the given links.</p>
-        <div class="works">
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/illustrations/Home.gif" alt="Wool Rush"/>
-                    </span>
-                        <h4 class="work__title">Neon Fists</h4>
-                        <span class="work__badges">
-                        <span class="work__badge">Unity</span>
-                        <span class="work__badge">C#</span>
-                        <span class="work__badge">Under Development</span>
-                    </span>
-                    <span class="work__badges">
-                    </span>
-                    <a href="https://www.linkedin.com/posts/muntasir-game-dev_neonfists-gamedev-unity3d-activity-7349889339176177665-3ZEh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC2rNPkBIR8U5F3cXDi30aQAWa40p-YRtJA" class="header__resume">Devlog</a>
-                    <!-- &nbsp; &nbsp;
-                    <a href="./lastDefender.html" class="header__resume">Details</a> -->
-                    <!-- <a href="./woolrush.html" class="work_view_btn">View</a> -->
-                </div>
-            </article>
+        
+        <!-- Toggle Tabs -->
+        <div class="project-tabs">
+            <button class="project-tab active" onclick="switchProjectTab('engine')" data-tab="engine">Engine Projects</button>
+            <button class="project-tab" onclick="switchProjectTab('gameplay')" data-tab="gameplay">Gameplay Projects</button>
+        </div>
 
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/illustrations/Home.gif" alt="Wool Rush"/>
-                    </span>
-                        <h4 class="work__title">Street Racer</h4>
+        <!-- Engine Projects Content -->
+        <div id="engineContent" class="project-content active">
+            <div class="works">
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                         <video width="600" height="160" autoplay muted loop playsinline preload="none" loading="lazy">
+                        <source src="./assets/works/personal_projects/Luminex Rendering Engine/Luminex.mp4" type="video/mp4">
+                        </span>
+                            <h4 class="work__title">Luminex Rendering Engine</h4>
+                            <span class="work__badges">
+                            <span class="work__badge">DirectX 11</span>
+                            <span class="work__badge">C++</span>
+                            <span class="work__badge">Under Development</span>
+                        </span>
                         <span class="work__badges">
-                        <span class="work__badge">Unity</span>
-                        <span class="work__badge">C#</span>
-                    </span>
-                  
-                     <a href="https://munstudios.itch.io/street-racer" class="header__resume">Play</a>
-                    &nbsp; &nbsp;
-                    <a href="https://github.com/Pixel-Man360/StreetRacer" class="header__resume">Code</a>
-                    &nbsp; &nbsp;
-                    <a href="https://www.youtube.com/watch?v=_Hahk6wMraM" class="header__resume">Video</a>
-                </div>
-            </article>
+                        </span>
+                        <a href="https://github.com/Pixel-Man360/LuminexRenderingEngine-Dx11" class="header__resume">Code</a>
+                    </div>
+                </article>
+            </div>
+        </div>
 
-            <article class="work">
-                <a href="./velocityRush.html"></a>
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <video width="600" height="160" autoplay muted loop playsinline preload="none" loading="lazy">
-                    <source src="./assets/works/personal_projects/Velocity Rush/Velo_Rush_Preview.mp4" type="video/mp4">
-                    </span>
-                        <h4 class="work__title">Velocity Rush</h4>
+        <!-- Gameplay Projects Content -->
+        <div id="gameplayContent" class="project-content">
+            <div class="works">
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                        <img src="./assets/illustrations/Home.gif" alt="Neon Fists"/>
+                        </span>
+                            <h4 class="work__title">Neon Fists</h4>
+                            <span class="work__badges">
+                            <span class="work__badge">Unity</span>
+                            <span class="work__badge">C#</span>
+                            <span class="work__badge">Under Development</span>
+                        </span>
                         <span class="work__badges">
-                        <span class="work__badge">Unity</span>
-                        <span class="work__badge">C#</span>
-                        <span class="work__badge">Photon Fusion</span>
-                        <span class="work__badge">Platform: PC</span>
-                    </span>
-                     <a href="https://github.com/Pixel-Man360/Velocity-Rush" class="header__resume">Code</a>
-                    &nbsp; &nbsp;
-                    <a href="./velocityRush.html" class="header__resume">Details</a>
-                </div>
-                </a>
-            </article>
+                        </span>
+                        <a href="https://www.linkedin.com/posts/muntasir-game-dev_neonfists-gamedev-unity3d-activity-7349889339176177665-3ZEh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC2rNPkBIR8U5F3cXDi30aQAWa40p-YRtJA" class="header__resume">Devlog</a>
+                    </div>
+                </article>
 
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/illustrations/Home.gif" alt="Wool Rush"/>
-                    </span>
-                        <h4 class="work__title">Tomb of the mask clone</h4>
-                        <span class="work__badges">
-                        <span class="work__badge">Unity</span>
-                        <span class="work__badge">C#</span>
-                    </span>
-                 <a href="https://github.com/Pixel-Man360/Tomb-of-The-Mask-Clone" class="header__resume">Code</a>
-                </div>
-            </article>
-            
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/illustrations/Home.gif" alt="Wool Rush"/>
-                    </span>
-                        <h4 class="work__title">Survival in Chaos</h4>
-                        <span class="work__badges">
-                        <span class="work__badge">Unity</span>
-                        <span class="work__badge">C#</span>
-                        <span class="work__badge">Brackeys Game Jam 2021.2</span>
-                    </span>
-                <a href="https://github.com/Pixel-Man360/Survival-In-Chaos" class="header__resume">Code</a>
-                </div>
-            </article>
-            
-            
+                <article class="work">
+                    <a href="./velocityRush.html"></a>
+                    <div class="work__box">
+                        <span class="work__img-box">
+                        <video width="600" height="160" autoplay muted loop playsinline preload="none" loading="lazy">
+                        <source src="./assets/works/personal_projects/Velocity Rush/Velo_Rush_Preview.mp4" type="video/mp4">
+                        </span>
+                            <h4 class="work__title">Velocity Rush</h4>
+                            <span class="work__badges">
+                            <span class="work__badge">Unity</span>
+                            <span class="work__badge">C#</span>
+                            <span class="work__badge">Photon Fusion</span>
+                            <span class="work__badge">Platform: PC</span>
+                        </span>
+                         <a href="https://github.com/Pixel-Man360/Velocity-Rush" class="header__resume">Code</a>
+                        &nbsp; &nbsp;
+                        <a href="./velocityRush.html" class="header__resume">Details</a>
+                    </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                        <img src="./assets/illustrations/Home.gif" alt="Street Racer"/>
+                        </span>
+                            <h4 class="work__title">Street Racer</h4>
+                            <span class="work__badges">
+                            <span class="work__badge">Unity</span>
+                            <span class="work__badge">C#</span>
+                        </span>
+                        <a href="https://munstudios.itch.io/street-racer" class="header__resume">Play</a>
+                        &nbsp; &nbsp;
+                        <a href="https://github.com/Pixel-Man360/StreetRacer" class="header__resume">Code</a>
+                        &nbsp; &nbsp;
+                        <a href="https://www.youtube.com/watch?v=_Hahk6wMraM" class="header__resume">Video</a>
+                    </div>
+                </article>
+
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                        <img src="./assets/illustrations/Home.gif" alt="Tomb of the mask clone"/>
+                        </span>
+                            <h4 class="work__title">Tomb of the mask clone</h4>
+                            <span class="work__badges">
+                            <span class="work__badge">Unity</span>
+                            <span class="work__badge">C#</span>
+                        </span>
+                        <a href="https://github.com/Pixel-Man360/Tomb-of-The-Mask-Clone" class="header__resume">Code</a>
+                    </div>
+                </article>
+                
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                        <img src="./assets/illustrations/Home.gif" alt="Survival in Chaos"/>
+                        </span>
+                            <h4 class="work__title">Survival in Chaos</h4>
+                            <span class="work__badges">
+                            <span class="work__badge">Unity</span>
+                            <span class="work__badge">C#</span>
+                            <span class="work__badge">Brackeys Game Jam 2021.2</span>
+                        </span>
+                        <a href="https://github.com/Pixel-Man360/Survival-In-Chaos" class="header__resume">Code</a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -390,7 +411,7 @@
             <span class="work__badges">
             <span class="work__badge">Engines: Unity</span>
             <span class="work__badge">Languages: C#, C++, Python</span>
-            <span class="work__badge">Tools/Library: DirectX, Git, Excel, Pytorch, Tensorflow</span>
+            <span class="work__badge">Tools/Library: DirectX, Git/Github, Excel, <br> Pytorch, Tensorflow</span>
             </span>
           </section>
 

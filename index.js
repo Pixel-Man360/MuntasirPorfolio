@@ -129,3 +129,14 @@ new SweetScroll({
   easing: 'easeOutQuint',
   offset: NAV_BAR.getBoundingClientRect().height - 80
 });
+
+// Switch between project tabs in Personal Projects section
+function switchProjectTab(tab) {
+  // Remove active class from all tabs and content
+  document.querySelectorAll('.project-tab').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.project-content').forEach(content => content.classList.remove('active'));
+  
+  // Add active class to clicked tab and corresponding content
+  document.querySelector(`.project-tab[data-tab="${tab}"]`).classList.add('active');
+  document.getElementById(tab === 'engine' ? 'engineContent' : 'gameplayContent').classList.add('active');
+}
