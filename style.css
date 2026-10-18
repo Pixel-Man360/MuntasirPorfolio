@@ -284,6 +284,13 @@ a{
     min-height: 48.4px;
     border-radius: 7.7px;
 }
+/* Play buttons inside project detail panels are 15% larger. */
+.project-title__info .header__resume--large {
+    font-size: 2.024rem;
+    padding: 1.265rem 1.8975rem;
+    min-height: 55.66px;
+    border-radius: 8.855px;
+}
 .header__resume:hover::before{
     width: 60%;
     height: 60%;
