@@ -68,6 +68,12 @@
       sections.forEach(section => {
         if (section.getBoundingClientRect().top <= edge) current = section;
       });
+      const scrollRoot = document.scrollingElement || document.documentElement;
+      const maxScroll = scrollRoot.scrollHeight - scrollRoot.clientHeight;
+      // The last section may be too short to reach the navbar's position threshold.
+      if (maxScroll > 0 && scrollRoot.scrollTop > 0 && scrollRoot.scrollTop >= maxScroll - 1) {
+        current = sections[sections.length - 1];
+      }
       links.forEach(link => {
         const active = link.hash === `#${current?.id}`;
         link.classList.toggle('active', active);
