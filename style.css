@@ -278,6 +278,12 @@ a{
     margin-bottom: 0.5rem;
     position: relative;
 }
+.header__resume--large {
+    font-size: 1.76rem;
+    padding: 1.1rem 1.65rem;
+    min-height: 48.4px;
+    border-radius: 7.7px;
+}
 .header__resume:hover::before{
     width: 60%;
     height: 60%;
@@ -648,11 +654,39 @@ a:focus-visible, button:focus-visible, video:focus-visible, [tabindex="-1"]:focu
 .hero__illustration img { display: block; width: 100%; height: auto; }
 .work__box { height: 100%; }
 .work__img-box video { display: block; width: 100%; height: auto; background: #130717; }
+/* Only portrait homepage previews use a compact frame; landscape media stays intrinsic. */
+.work__img-box--portrait video {
+    height: min(460px, 65vh);
+    height: min(460px, 65svh);
+    object-fit: contain;
+}
 .video__fallback { display: block; width: 100%; padding: 1rem 0; font-size: 1.3rem; }
 .project-tabs { flex-wrap: wrap; width: 100%; }
 .project-tab { flex: 1 1 180px; min-height: 44px; }
 .section > p { margin-top: 2.4rem; }
-.skills__illustration { display: block; margin-top: 3.2rem; height: auto; }
+.skills__groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-top: 3.2rem;
+}
+.skills__group {
+    min-width: 0;
+    padding: 2rem;
+    border: 1px solid #59ffb933;
+    border-radius: 7px;
+    background: #26222d;
+}
+.skills__group h3 { margin-bottom: 1.6rem; color: #59ffb9; font-size: 1.8rem; font-weight: 700; }
+.skills__list { display: flex; flex-wrap: wrap; gap: .8rem; }
+.skills__list li {
+    max-width: 100%;
+    padding: .7rem 1rem;
+    border-radius: 7px;
+    background: #59ffb91c;
+    overflow-wrap: anywhere;
+}
 
 @media (max-width: 767px) {
     .nav { padding: 1rem 0; }
@@ -704,7 +738,7 @@ a:focus-visible, button:focus-visible, video:focus-visible, [tabindex="-1"]:focu
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    .hero__illustration, .skills__illustration { display: none; }
+    .hero__illustration { display: none; }
 }
 
 /*
