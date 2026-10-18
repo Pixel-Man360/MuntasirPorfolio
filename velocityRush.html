@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&amp;display=swap"
           rel="stylesheet">
-
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
 
     <!-- CSS & JS -->
     <link rel="stylesheet" href="./style.css"/>
@@ -27,7 +25,7 @@
     
     <!-- Hero Header -->
     <header id="heroHeader" class="hero-header">
-        <nav id="navBar" class="nav">
+        <nav id="navBar" class="nav" aria-label="Project navigation">
             <div class="container">
                 <!-- <div class="header__left"> -->
                 <!-- <h6 class="header__name">
@@ -41,6 +39,7 @@
                 <a href="index.html" class="header__resume">Return</a>
                   
             </div>
+        </nav>
     </header>
 
 
@@ -49,10 +48,10 @@
         <div class="containerProject">
             <div class="project-details__box">
                 <div>
-                    <h4 class="project-title__heading">Velocity Rush</h4>
+                    <h1 class="project-title__heading">Velocity Rush</h1>
                     <p class="project-title__subtitle">Personal Project</p>
                     <div class="project-title__details">
-                        <img src="./assets/works/personal_projects/Velocity Rush/VER_Icon.png" class="project-title__icon" alt="Project Icon" style="width: 60%;">
+                        <img src="./assets/works/personal_projects/Velocity Rush/VER_Icon.png" class="project-title__icon" alt="Project Icon">
                         <div class="project-title__info">
                             <span class="project_detail_badges"> Genre: Multiplayer Racing </span>
                             <span class="project_detail_badges"> Platform: PC</span>
@@ -66,19 +65,18 @@
         
                     <br>
 
-                    <h4 class="project-title__heading">Gameplay</h4>
+                    <h2 class="project-title__heading">Gameplay</h2>
                     <div class="gallery">
                         <div class="gallery__item">
-                            <video width="600" height="300" controls>
+                            <video playsinline preload="metadata" poster="./assets/works/posters/velo-rush-1.jpg" aria-label="Velocity Rush gameplay" width="1234" height="720" controls>
                                 <source src="./assets/works/personal_projects/Velocity Rush/Velo_Rush_1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+
+                            <a href="./assets/works/personal_projects/Velocity Rush/Velo_Rush_1.mp4">Open video</a>
+                        </video>
                         </div>
                     </div>
 
-                    <br> <br> <br>
-
-                    <h4 class="project-title__heading">My Contributions</h4>
+                    <h2 class="project-title__heading">My Contributions</h2>
                     <div class="project-contributions__text">
                         <ul>
                             <li><b>This section is under development. Details will be coming soon. Please checkout the gameplay for now and try the game.</b></li>
@@ -104,8 +102,10 @@
                                     </ul> 
                                     </li>
                                 </li> -->
-                </div>
+                </ul>
+                    </div>
             </div>
+        </div>
         </div>
     </section>
 

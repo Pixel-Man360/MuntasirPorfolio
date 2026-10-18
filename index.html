@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&amp;display=swap"
           rel="stylesheet">
-
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
 
     <!-- CSS & JS -->
     <link rel="stylesheet" href="./style.css"/>
@@ -38,25 +36,23 @@
     
     <!-- Hero Header -->
     <header id="heroHeader" class="hero-header">
-        <nav id="navBar" class="nav">
-            <div class="container">
-                <button type="button" id="hamburgerBtn" class="nav__hamburger-btn">
-                    <span class="nav__hamburger-top"></span>
-                    <span class="nav__hamburger-center"></span>
-                    <span class="nav__hamburger-bottom"></span>
+        <nav id="navBar" class="nav" aria-label="Main navigation">
+            <div class="container nav__container">
+                <button type="button" id="hamburgerBtn" class="nav__hamburger-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="navList" hidden>
+                    <span aria-hidden="true" class="nav__hamburger-top"></span>
+                    <span aria-hidden="true" class="nav__hamburger-center"></span>
+                    <span aria-hidden="true" class="nav__hamburger-bottom"></span>
                 </button>
-                <div class="header__left">
-                    <h6 class="header__name">
+                <div class="nav__brand">
+                    <p class="header__name">
                         <span class="header__title-1" data-role="MUNTASIR CHOWDHURY MRIDUL">Muntasir Chowdhury Mridul</span>
-                    </h6>
-                    <br>
+                    </p>
                     <h1 class="header__position">
                         <span class="header__title-1" data-role="GAME DEVELOPER">Game Developer</span>
                     </h1>
 
                 </div>
 
-            <div class="container">
                 <ul id="navList" class="nav__list">
                     <li class="nav__list-item">
                         <a class="nav__list-link active" href="#heroHeader">Home()</a>
@@ -73,55 +69,40 @@
                 </ul>
             </div>
         </nav>
+        <div class="header__container container">
 
-        <br> <br> <br> <br> 
-            
-    
+            <div class="hero__copy">
 
-        <section class="header__container container">     
-
-            <div class="header__left">
-
-                <img src="./assets/illustrations/me.jpg" width="200" height="200" style="border-radius: 50%;" alt="Mridul"/>
+                <img src="./assets/illustrations/me.jpg" width="200" height="200" class="hero__portrait" alt="Mridul"/>
 
                 <p class="header__msg"> I’m a game developer with 4+ years of professional experience building and maintaining mobile games in Unity. I’ve worked as a sole programmer and led small development teams, developing gameplay, NPC AI, and progression systems from prototyping through release and post-launch updates. My personal work extends into PC gameplay and graphics programming, including Luminex, my C++/DirectX 11 rendering engine. Across these projects, my goal is to create games that people love playing, keep coming back to, and remember for years.
                 </p>
 
                 <a href="./assets/contact/Muntasir Resume.pdf" class="header__resume">Resume</a>
 
-                <br> <br> <br>
-
-                <div class="header__left">
+                <div class="hero__socials">
 
 
-                    <a href="https://www.linkedin.com/in/muntasir-game-dev/">
-                        <img src="./assets/contact/linkedin.svg" width = "40"/>
+                    <a href="https://www.linkedin.com/in/muntasir-game-dev/" aria-label="LinkedIn">
+                        <img src="./assets/contact/linkedin.svg" width = "40" height="40" alt=""/>
                     </a>
-
-                    &nbsp
-
-                    <a href="https://github.com/Pixel-Man360">
-                        <img src="./assets/contact/github.svg" width = "40" />
+                        <a href="https://github.com/Pixel-Man360" aria-label="GitHub">
+                        <img src="./assets/contact/github.svg" width = "40" height="40" alt=""/>
                     </a>
-
-                    &nbsp
-
-                    <a href="mailto:muntasir.chowdury360@gmail.com">
-                        <img src="./assets/contact/gmail.svg" width = "40"/>
+                        <a href="mailto:muntasir.chowdury360@gmail.com" aria-label="Email">
+                        <img src="./assets/contact/gmail.svg" width = "40" height="40" alt=""/>
                     </a>
-
-                    &nbsp
                 </div>
 
             </div>
 
 
-            <div class="header-left">
-                <img src = "https://38.media.tumblr.com/a401eaca1220428dc37379cbd7312e16/tumblr_nv44lndz1l1u6xnmoo1_1280.gif">
+            <div class="hero__illustration" aria-hidden="true">
+                <img src = "https://38.media.tumblr.com/a401eaca1220428dc37379cbd7312e16/tumblr_nv44lndz1l1u6xnmoo1_1280.gif" alt="">
             </div>
             
           
-        </section>
+        </div>
         <!-- <span class="header__bg"></span> -->
     </header>
 
@@ -132,16 +113,16 @@
             <div class="works">
 
                 <article class="work">
-                    <a href="./fightForWorld.html">
                     <div class="work__box">
                         <span class="work__img-box">
-                        <video width="1000" height="511" autoplay muted loop playsinline preload="none" loading="lazy">
+                        <video poster="./assets/works/posters/ffw-preview.jpg" aria-label="Fight for World preview" width="1080" height="2400" autoplay muted loop playsinline preload="none">
                         <source src="./assets/works/professional_projects/Fight For World/FFW_Preview.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+
+                        <a href="./assets/works/professional_projects/Fight For World/FFW_Preview.mp4">Open video</a>
                         </video>
                         </span>
-                            <h4 class="work__title">Fight for World</h4>
-                            <h4 class="work__company">Big Bang Studio Ltd.</h4>
+                            <h3 class="work__title"><a href="./fightForWorld.html">Fight for World</a></h3>
+                            <p class="work__company">Big Bang Studio Ltd.</p>
                             <span class="work__badges">
                             <span class="work__badge">Unity</span>
                             <span class="work__badge">C#</span>
@@ -150,23 +131,23 @@
                         </span>
         
                         <a href="https://play.google.com/store/apps/details?id=com.bigbang.fightforworld" class="header__resume">Play</a>
-                        &nbsp; &nbsp;
+
                         <a href="./fightForWorld.html" class="header__resume">Details</a>
                         <!-- <a href="./woolrush.html" class="work_view_btn">View</a> -->
                     </div>
-                </a>
                 </article>
 
 
             <article class="work">
-                <a href="./woolrush.html">
                 <div class="work__box">
                     <span class="work__img-box">
-                    <video width="930" height="465" autoplay muted loop playsinline preload="none" loading="lazy">
+                    <video poster="./assets/works/posters/wr-preview.jpg" aria-label="Wool Rush: Sheep Farm Empire preview" width="1080" height="2472" autoplay muted loop playsinline preload="none">
                     <source src="./assets/works/professional_projects/Wool Rush/WR_Preview.mp4" type="video/mp4">
-                    </span>
-                        <h4 class="work__title">Wool Rush: Sheep Farm Empire</h4>
-                        <h4 class="work__company">Big Bang Studio Ltd.</h4>
+                        <a href="./assets/works/professional_projects/Wool Rush/WR_Preview.mp4">Open video</a>
+                        </video>
+                        </span>
+                        <h3 class="work__title"><a href="./woolrush.html">Wool Rush: Sheep Farm Empire</a></h3>
+                        <p class="work__company">Big Bang Studio Ltd.</p>
                         <span class="work__badges">
                             <span class="work__badge">Unity</span>
                             <span class="work__badge">C#</span>
@@ -174,22 +155,22 @@
                             <span class="work__badge">Soft Launched with: Funtory</span>
                         </span>
                         <a href="https://play.google.com/store/apps/details?id=com.bigbang.woolrush" class="header__resume">Play</a>
-                        &nbsp; &nbsp;
+
                         <a href="./woolrush.html" class="header__resume">Details</a>
                 </div>
-                </a>
-            </article>
+                </article>
                
 
             <article class="work">
-                <a href="./idlePowerCity.html">
                 <div class="work__box">
                     <span class="work__img-box">
-                    <video width="990" height="494" autoplay muted loop playsinline preload="none" loading="lazy">
+                    <video poster="./assets/works/posters/ipc-preview.jpg" aria-label="Idle Power City preview" width="1080" height="1920" autoplay muted loop playsinline preload="none">
                     <source src="./assets/works/professional_projects/Idle Power City/IPC_Preview.mp4" type="video/mp4">
-                    </span>
-                        <h4 class="work__title">Idle Power City</h4>
-                        <h4 class="work__company">Big Bang Studio Ltd.</h4>
+                        <a href="./assets/works/professional_projects/Idle Power City/IPC_Preview.mp4">Open video</a>
+                        </video>
+                        </span>
+                        <h3 class="work__title"><a href="./idlePowerCity.html">Idle Power City</a></h3>
+                        <p class="work__company">Big Bang Studio Ltd.</p>
                         <span class="work__badges">
                         <span class="work__badge">Unity</span>
                         <span class="work__badge">C#</span>
@@ -197,62 +178,58 @@
                         <span class="work__badge">Soft Launched with: MondayOff</span>
               
                     </span>
-                    <span class="work__badges">
-                    </span>
+
                     <a href="https://play.google.com/store/apps/details?id=com.bigbang.idlepowercity" class="header__resume">Play</a>
-                    &nbsp; &nbsp;
-                    <a href="./idlePowerCity.html" class="header__resume">Details</a>
+
+                        <a href="./idlePowerCity.html" class="header__resume">Details</a>
                     <!-- <a href="./woolrush.html" class="work_view_btn">View</a> -->
                 </div>
-            </a>
-            </article>
+                </article>
 
 
             <article class="work">
-                <a href="./junkyardSurvival.html">
                 <div class="work__box">
                     <span class="work__img-box">
-                    <video width="1000" height="511" autoplay muted loop playsinline preload="none" loading="lazy">
+                    <video poster="./assets/works/posters/js-preview.jpg" aria-label="Junkyard Survival preview" width="720" height="1600" autoplay muted loop playsinline preload="none">
                     <source src="./assets/works/professional_projects/Junkyard Survival/JS_Preview.mp4" type="video/mp4">
-                    </span>
-                        <h4 class="work__title">Junkyard Survival</h4>
-                        <h4 class="work__company">Big Bang Studio Ltd.</h4>
+                        <a href="./assets/works/professional_projects/Junkyard Survival/JS_Preview.mp4">Open video</a>
+                        </video>
+                        </span>
+                        <h3 class="work__title"><a href="./junkyardSurvival.html">Junkyard Survival</a></h3>
+                        <p class="work__company">Big Bang Studio Ltd.</p>
                         <span class="work__badges">
                         <span class="work__badge">Unity</span>
                         <span class="work__badge">C#</span>
                         <span class="work__badge">Platform: IOS</span>
                     </span>
-                    <span class="work__badges">
-                    </span>
+
                     <a href="https://apps.apple.com/in/app/junkyard-survival/id6781608244" class="header__resume">Play</a>
-                    &nbsp; &nbsp;
-                    <a href="./junkyardSurvival.html" class="header__resume">Details</a>
+
+                        <a href="./junkyardSurvival.html" class="header__resume">Details</a>
                 </div>
-            </a>
-            </article>
+                </article>
 
             <article class="work">
-                <a href="./troopEngine.html">
                 <div class="work__box">
                     <span class="work__img-box">
-                    <video width="1000" height="511" autoplay muted loop playsinline preload="none" loading="lazy">
+                    <video poster="./assets/works/posters/te-preview.jpg" aria-label="Troop Engine preview" width="1080" height="2400" autoplay muted loop playsinline preload="none">
                     <source src="./assets/works/professional_projects/Troop Engine/TE_Preview.mp4" type="video/mp4">
-                    </span>
-                        <h4 class="work__title">Troop Engine</h4>
-                        <h4 class="work__company">Big Bang Studio Ltd.</h4>
+                        <a href="./assets/works/professional_projects/Troop Engine/TE_Preview.mp4">Open video</a>
+                        </video>
+                        </span>
+                        <h3 class="work__title"><a href="./troopEngine.html">Troop Engine</a></h3>
+                        <p class="work__company">Big Bang Studio Ltd.</p>
                         <span class="work__badges">
                         <span class="work__badge">Unity</span>
                         <span class="work__badge">C#</span>
                         <span class="work__badge">Platform: IOS</span>
                     </span>
-                    <span class="work__badges">
-                    </span>
+
                     <a href="https://apps.apple.com/in/app/troop-engine/id6746688235" class="header__resume">Play</a>
-                    &nbsp; &nbsp; 
-              <a href="./troopEngine.html" class="header__resume">Details</a>
+
+                        <a href="./troopEngine.html" class="header__resume">Details</a>
                 </div>
-            </a> 
-            </article>
+                </article>
 
 
             
@@ -271,8 +248,7 @@
                         <span class="work__badge">C#</span>
                         <span class="work__badge">Platform: Android</span>
                     </span>
-                    <span class="work__badges">
-                    </span>
+
                     <a href="https://play.google.com/store/apps/details?id=com.bigbang.lastdefender" class="header__resume">Play</a>
                     &nbsp; &nbsp;
                     <a href="./lastDefender.html" class="header__resume">Details</a>
@@ -288,32 +264,33 @@
 
     <section id="personal" class="section container">
         <h2 class="section__title">Personal Projects</h2>
-        <br> <br> <br> <p> 🚀 This section is under development. I will add project details, screenshots and playable links soon. For now you can checkout the given links.</p>
+        <p> 🚀 This section is under development. I will add project details, screenshots and playable links soon. For now you can checkout the given links.</p>
         
         <!-- Toggle Tabs -->
-        <div class="project-tabs">
-            <button class="project-tab active" onclick="switchProjectTab('engine')" data-tab="engine">Engine Projects</button>
-            <button class="project-tab" onclick="switchProjectTab('gameplay')" data-tab="gameplay">Gameplay Projects</button>
+        <div class="project-tabs" role="tablist" aria-label="Personal project category">
+            <button class="project-tab active" type="button" role="tab" id="engineTab" aria-controls="engineContent" aria-selected="true" data-tab="engine">Engine Projects</button>
+            <button class="project-tab" type="button" role="tab" id="gameplayTab" aria-controls="gameplayContent" aria-selected="false" tabindex="-1" data-tab="gameplay">Gameplay Projects</button>
         </div>
 
         <!-- Engine Projects Content -->
-        <div id="engineContent" class="project-content active">
+        <div id="engineContent" class="project-content active" role="tabpanel" aria-labelledby="engineTab">
             <div class="works">
                 <article class="work">
                     <div class="work__box">
                         <span class="work__img-box">
-                         <video width="600" height="160" autoplay muted loop playsinline preload="none" loading="lazy">
+                         <video poster="./assets/works/posters/luminex.jpg" aria-label="Luminex Rendering Engine preview" width="1280" height="720" autoplay muted loop playsinline preload="none">
                         <source src="./assets/works/personal_projects/Luminex Rendering Engine/Luminex.mp4" type="video/mp4">
+                        <a href="./assets/works/personal_projects/Luminex Rendering Engine/Luminex.mp4">Open video</a>
+                        </video>
                         </span>
-                            <h4 class="work__title">Luminex Rendering Engine</h4>
+                            <h3 class="work__title">Luminex Rendering Engine</h3>
                             <span class="work__badges">
                             <span class="work__badge">DirectX 11</span>
                             <span class="work__badge">C++</span>
                              <span class="work__badge">Platform: PC</span>
                             <span class="work__badge">Under Development</span>
                         </span>
-                        <span class="work__badges">
-                        </span>
+
                         <a href="https://github.com/Pixel-Man360/LuminexRenderingEngine-Dx11" class="header__resume">Code</a>
                     </div>
                 </article>
@@ -321,34 +298,34 @@
         </div>
 
         <!-- Gameplay Projects Content -->
-        <div id="gameplayContent" class="project-content">
+        <div id="gameplayContent" class="project-content" role="tabpanel" aria-labelledby="gameplayTab" hidden>
             <div class="works">
                 <article class="work">
                     <div class="work__box">
                         <span class="work__img-box">
                         <img src="./assets/illustrations/Home.gif" alt="Neon Fists"/>
                         </span>
-                            <h4 class="work__title">Neon Fists</h4>
+                            <h3 class="work__title">Neon Fists</h3>
                             <span class="work__badges">
                             <span class="work__badge">Unity</span>
                             <span class="work__badge">C#</span>
                              <span class="work__badge">Platform: PC</span>
                             <span class="work__badge">Under Development</span>
                         </span>
-                        <span class="work__badges">
-                        </span>
-                        <a href="https://www.linkedin.com/posts/muntasir-game-dev_neonfists-gamedev-unity3d-activity-7349889339176177665-3ZEh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC2rNPkBIR8U5F3cXDi30aQAWa40p-YRtJA" class="header__resume">Devlog</a>
+
+                        <a href="https://www.linkedin.com/posts/muntasir-game-dev_neonfists-gamedev-unity3d-activity-7349889339176177665-3ZEh?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAC2rNPkBIR8U5F3cXDi30aQAWa40p-YRtJA" class="header__resume">Devlog</a>
                     </div>
                 </article>
 
                 <article class="work">
-                    <a href="./velocityRush.html"></a>
                     <div class="work__box">
                         <span class="work__img-box">
-                        <video width="600" height="160" autoplay muted loop playsinline preload="none" loading="lazy">
+                        <video poster="./assets/works/posters/velo-rush-preview.jpg" aria-label="Velocity Rush preview" width="1234" height="720" autoplay muted loop playsinline preload="none">
                         <source src="./assets/works/personal_projects/Velocity Rush/Velo_Rush_Preview.mp4" type="video/mp4">
+                        <a href="./assets/works/personal_projects/Velocity Rush/Velo_Rush_Preview.mp4">Open video</a>
+                        </video>
                         </span>
-                            <h4 class="work__title">Velocity Rush</h4>
+                            <h3 class="work__title"><a href="./velocityRush.html">Velocity Rush</a></h3>
                             <span class="work__badges">
                             <span class="work__badge">Unity</span>
                             <span class="work__badge">C#</span>
@@ -357,10 +334,9 @@
                             <span class="work__badge">Platform: PC</span>
                         </span>
                          <a href="https://github.com/Pixel-Man360/Velocity-Rush" class="header__resume">Code</a>
-                        &nbsp; &nbsp;
+
                         <a href="./velocityRush.html" class="header__resume">Details</a>
                     </div>
-                    </a>
                 </article>
                 <!-- <article class="work">
                     <div class="work__box">
@@ -414,8 +390,7 @@
 
     <!-- Skills -->
      <section id="skills" class="section container">
-            <h2 class="section__title">Skills</h2> <br> <br> 
-            <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UuAcEwVzdoosc6mg9oIJMg.gif" width="400">
+            <h2 class="section__title">Skills</h2> <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UuAcEwVzdoosc6mg9oIJMg.gif" width="400" class="skills__illustration" alt="Programming illustration">
             <span class="work__badges">
             <span class="work__badge">Engines: Unity</span>
             <span class="work__badge">Languages: C#, C++, Python</span>
