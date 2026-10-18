@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&amp;display=swap"
           rel="stylesheet">
-
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
 
     <!-- CSS & JS -->
     <link rel="stylesheet" href="./style.css"/>
@@ -27,7 +25,7 @@
     
     <!-- Hero Header -->
     <header id="heroHeader" class="hero-header">
-        <nav id="navBar" class="nav">
+        <nav id="navBar" class="nav" aria-label="Project navigation">
             <div class="container">
                 <!-- <div class="header__left"> -->
                 <!-- <h6 class="header__name">
@@ -41,6 +39,7 @@
                 <a href="index.html" class="header__resume">Return</a>
                   
             </div>
+        </nav>
     </header>
 
 
@@ -49,10 +48,10 @@
         <div class="containerProject">
             <div class="project-details__box">
                 <div>
-                    <h4 class="project-title__heading">Card Screw Jam</h4>
+                    <h1 class="project-title__heading">Card Screw Jam</h1>
                     <p class="project-title__subtitle">Big Bang Studio Ltd.</p>
                     <div class="project-title__details">
-                        <img src="./assets/works/professional_projects/card_screw_jam/icon.png" class="project-title__icon" alt="Project Icon" style="width: 47%;">
+                        <img src="./assets/works/professional_projects/card_screw_jam/icon.png" class="project-title__icon" alt="Project Icon">
                         <div class="project-title__info">
                             <span class="project_detail_badges"> Genre: Puzzle, Hybrid Puzzle  </span>
                             <span class="project_detail_badges"> Platform: Android </span>
@@ -66,34 +65,33 @@
 
                     <br>
 
-                    <h4 class="project-title__heading">Gameplay</h4>
+                    <h2 class="project-title__heading">Gameplay</h2>
                     <div class="gallery">
                         <div class="gallery__item">
-                            <video width="600" height="300" controls>
+                            <video playsinline preload="metadata" poster="./assets/works/posters/csj1.jpg" aria-label="Card Screw Jam gameplay" width="720" height="1280" controls>
                                 <source src="./assets/works/professional_projects/card_screw_jam/CSJ1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+
+                            <a href="./assets/works/professional_projects/card_screw_jam/CSJ1.mp4">Open video</a>
+                        </video>
                         </div>
                         <div class="gallery__item">
-                            <video width="600" height="300" controls>
+                            <video playsinline preload="metadata" poster="./assets/works/posters/csj2.jpg" aria-label="Card Screw Jam gameplay" width="720" height="1280" controls>
                                 <source src="./assets/works/professional_projects/card_screw_jam/CSJ2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+
+                            <a href="./assets/works/professional_projects/card_screw_jam/CSJ2.mp4">Open video</a>
+                        </video>
                         </div>
                     </div>
 
-                    <br> <br> <br>
-
-
-                    <h4 class="project-title__heading">My Contributions</h4>
+                    <h2 class="project-title__heading">My Contributions</h2>
                     <div class="project-contributions__text">
-                        <ul>
+
                             <p>🚀 I was the sole programmer/developer for this game. I worked with our 2d artist and led the project.</p>
-                            <br>
+                            <br/>
                             <p><b>🎯 My Goal for this Project</b></p>
-                            <br>    
+                            <br/>
                             <p>My goal was to design and implement a physics-based puzzle game with unique card gameplay using the trendy pin and match 3 mechanics.</p>
-                            <br>
+                            <br/>
                             <p><b>✅ How I Achieved It</b></p>
 
                             <ul>
@@ -105,7 +103,7 @@
                                                 <li> Tap on an empty slot to screw a pin.</li>
                                                 <li> Pin will only be screwed if the slot has no overlap.</li>
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
 
                                     <ul> 
                                         <li><b>Card Gameplay- </b>
@@ -120,9 +118,9 @@
                                                 <li> This gameplay system was created using Unity Hinge joint. I connected the cards and pins using hinge joints to allow for smooth movement and interaction. Turning of a joint makes the card rotate and fall.</li>
 
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
                                     </li>
-                                </li>
+
 
                                 <li><b>Powerup systems:-</b>
                                     <ul> 
@@ -131,7 +129,7 @@
                                                 <li>Clicking this powerup gave an extra pin slot to the players.</li>
                                                 <li>This was done by having a predefined hidden pin which was activated when the powerup was clicked.</li>
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
 
                                      <ul> 
                                         <li><b>Extra card slot powerup- </b>
@@ -139,19 +137,19 @@
                                                 <li>Clicking this powerup gave an extra card slot to the players.</li>
                                                 <li>This was done by having a predefined hidden card slot which was activated when the powerup was clicked.</li>
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
 
                                       <ul> 
                                         <li><b>Hammer powerup- </b>
                                             <ul>
                                                 <li>Clicking this powerup makes the pins scale up and down. When pin is clicked, a hammer spawns and hits the pin and it disappears.</li>
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
                                     
 
                                     </li>
                                     
-                                </li>
+
                                 </ul>
                             <ul>
                                 <li><b>Editor Tools:-</b>
@@ -164,9 +162,9 @@
                                                 <li> I used Unity's scriptable object system for the level data such as number of briefcase, what type and color of cards each briefcase slot contained and whether or not it's a harder level.</li>
 
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
 
-                                    <li><b>Main Menu:-</b>
+                                    </li><li><b>Main Menu:-</b>
                                     <ul> 
                                         <li><b>Level scrolling- </b>
                                             <ul>
@@ -174,7 +172,7 @@
                                                 <li> Hard levels had different graphics to indicate their difficulty.</li>
                                             </ul> 
 
-                                        <li><b>Spin Wheel- </b>
+                                        </li><li><b>Spin Wheel- </b>
                                         <ul>
                                             <li> The spin wheel was created to give players some powerups or coins as reward.</li>
                                             <li> The wheel was created using Unity's UI system. The spinning effect was done using dotween. I divided the wheel into 8 sections and each section had a different reward.</li>
@@ -182,7 +180,7 @@
                                             <li> The spinning ease out was done using dotween.</li>
                                             <li> I modified the sfx for the spin using Audacity and made it as long as the spin duration.  </li>
                                         </ul> 
-                                    </ul> 
+                                    </li></ul>
                             </li>
                         </ul>
 
@@ -192,7 +190,7 @@
                         <li><b>Editor Productivity:</b> Built my third custom Unity editor tool to automate repetitive level setup, saving massive time and ensuring consistency.</li>
                         <li><b>Systematic Level Design:</b> Learned how to represent puzzle levels in a data-driven way (via Scriptable Objects) so designers could easily create and iterate on new challenges.</li>
                         <li><b>Player Engagement Loops:</b> Gained experience designing reward systems (spin wheel, powerups) to increase session retention and gameplay variety.</li>
-                        <li><b>Polish & Feedback:</b> Improved at handling animations, sound, and feedback systems to make puzzle interactions feel more tactile and satisfying.</li>
+                        <li><b>Polish &amp; Feedback:</b> Improved at handling animations, sound, and feedback systems to make puzzle interactions feel more tactile and satisfying.</li>
                         <li><b>Full Ownership:</b> Strengthened my ability to handle end-to-end development alone, including gameplay, tools, UI, and audio integration.</li>
                         </ul>
 
@@ -200,6 +198,7 @@
                                 
                 </div>
             </div>
+        </div>
         </div>
     </section>
 

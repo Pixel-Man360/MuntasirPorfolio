@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&amp;display=swap"
           rel="stylesheet">
-
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
 
     <!-- CSS & JS -->
     <link rel="stylesheet" href="./style.css"/>
@@ -27,7 +25,7 @@
     
     <!-- Hero Header -->
     <header id="heroHeader" class="hero-header">
-        <nav id="navBar" class="nav">
+        <nav id="navBar" class="nav" aria-label="Project navigation">
             <div class="container">
                 <!-- <div class="header__left"> -->
                 <!-- <h6 class="header__name">
@@ -41,6 +39,7 @@
                 <a href="index.html" class="header__resume">Return</a>
                   
             </div>
+        </nav>
     </header>
 
 
@@ -49,10 +48,10 @@
         <div class="containerProject">
             <div class="project-details__box">
                 <div>
-                    <h4 class="project-title__heading">Game Name</h4>
+                    <h1 class="project-title__heading">Game Name</h1>
                     <p class="project-title__subtitle">Big Bang Studio Ltd.</p>
                     <div class="project-title__details">
-                        <img src="assets/works/Professional Projects/Mythic Trail/MTIcon.jpg" class="project-title__icon" alt="Project Icon" style="width: 35%;">
+                        <img src="assets/works/professional_projects/Mythic Trail/MTIcon.jpg" class="project-title__icon" alt="Project Icon">
                         <div class="project-title__info">
                             <span class="project_detail_badges"> Genre:  </span>
                             <span class="project_detail_badges"> Platform: Android </span>
@@ -65,40 +64,33 @@
                     </div>
         
 
-                    <h4 class="project-title__heading">Gallery</h4>
+                    <h2 class="project-title__heading">Gallery</h2>
                     <div class="gallery">
                         <div class="gallery__item">
-                            <video width="600" height="300" controls>
-                                <source src="" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <p class="gallery__placeholder">Gameplay video placeholder</p>
                         </div>
                         <div class="gallery__item">
-                            <video width="600" height="300" controls>
-                                <source src="" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <p class="gallery__placeholder">Gameplay video placeholder</p>
                         </div>
                     </div>
 
                     <div class="gallery">
                         <div class="gallery__item">
-                            <img src="./assets/gallery/image1.jpg" alt="Project Image 1">
+                            <p class="gallery__placeholder">Project image 1 placeholder</p>
                         </div>
                         <div class="gallery__item">
-                            <img src="./assets/gallery/image2.jpg" alt="Project Image 2">
+                            <p class="gallery__placeholder">Project image 2 placeholder</p>
                         </div>
                         <div class="gallery__item">
-                            <img src="./assets/gallery/image3.jpg" alt="Project Image 3">
+                            <p class="gallery__placeholder">Project image 3 placeholder</p>
                         </div>
                         <!-- Add more gallery items as needed -->
                     </div>
 
-                    <h4 class="project-title__heading">My Contributions</h4>
+                    <h2 class="project-title__heading">My Contributions</h2>
                     <div class="project-contributions__text">
                         <ul>
-                            <li><b>I implemented:</b></li>
-                            <ul>
+                            <li><b>I implemented:</b><ul>
                                 <li><b>Core Gameplay Systems:-</b>
                                     <ul> 
                                         <li><b>Player Behavior- </b>
@@ -106,9 +98,9 @@
                                                 <li> details</li>
                                                 
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
                                     </li>
-                                </li>
+
 
                                 <li><b>Group of systems:-</b>
                                     <ul> 
@@ -117,11 +109,14 @@
                                                 <li>details.</li>
                                                 
                                             </ul> 
-                                    </ul> 
+                                    </li></ul>
                                     </li>
-                                </li>
-                </div>
+
+                </ul></li>
+                            </ul>
+                    </div>
             </div>
+        </div>
         </div>
     </section>
 

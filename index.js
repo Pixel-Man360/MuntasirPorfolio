@@ -1,142 +1,187 @@
-const NAV_BAR = document.getElementById('navBar');
-const NAV_LIST = document.getElementById('navList');
-const HERO_HEADER = document.getElementById('heroHeader');
-const HAMBURGER_BTN = document.getElementById('hamburgerBtn');
-const NAV_LINKS = Array.from( document.querySelectorAll('.nav__list-link'));
-const SERVICE_BOXES = document.querySelectorAll('.service-card__box');
-const ACTIVE_LINK_CLASS = 'active';
-const BREAKPOINT = 576;
+(() => {
+  const nav = document.getElementById('navBar');
+  const list = document.getElementById('navList');
+  const toggle = document.getElementById('hamburgerBtn');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-let currentServiceBG = null;
-let currentActiveLink = document.querySelector('.nav__list-link.active');
-
-// Remove the active state once the breakpoint is reached
-const resetActiveState = ()=>{
-  NAV_LIST.classList.remove('nav--active');
-  Object.assign(NAV_LIST.style, {
-    height: null
-  });
-  Object.assign(document.body.style, {
-    overflowY: null
-  });
-}
-
-//Add padding to the header to make it visible because navbar has a fixed position.
-const addPaddingToHeroHeaderFn = () => {
-  const NAV_BAR_HEIGHT = NAV_BAR.getBoundingClientRect().height;
-  const HEIGHT_IN_REM = NAV_BAR_HEIGHT / 10;
-
-  // If hamburger button is active, do not add padding
-  if (NAV_LIST.classList.contains('nav--active')) {
-    return;
+  // Native anchors share this measured offset, including direct URLs and history.
+  if (nav) {
+    const measureNav = () => {
+      document.documentElement.style.setProperty('--nav-height', `${nav.getBoundingClientRect().height}px`);
+    };
+    measureNav();
+    if ('ResizeObserver' in window) new ResizeObserver(measureNav).observe(nav);
+    window.addEventListener('resize', measureNav);
+    const alignInitialHash = () => {
+      measureNav();
+      let id;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'instant' });
+    };
+    // Correct the initial anchor jump after fonts and media settle.
+    window.addEventListener('load', () => {
+      if (document.fonts) document.fonts.ready.then(alignInitialHash);
+      else alignInitialHash();
+    }, { once: true });
   }
-  Object.assign(HERO_HEADER.style, {
-    paddingTop: HEIGHT_IN_REM + 'rem'
-  });
-}
-addPaddingToHeroHeaderFn();
-window.addEventListener('resize', ()=>{
-  addPaddingToHeroHeaderFn();
 
-  // When the navbar is active and the window is being resized, remove the active state once the breakpoint is reached
-  if(window.innerWidth >= BREAKPOINT){
-    addPaddingToHeroHeaderFn();
-    resetActiveState();
-  }
-});
+  // Detail pages intentionally have only a Return link.
+  if (nav && list && toggle) {
+    const mobile = window.matchMedia('(max-width: 767px)');
+    const links = [...list.querySelectorAll('.nav__list-link')];
+    let open = false;
+    toggle.hidden = false;
+    nav.classList.add('nav--enhanced');
 
-// As the user scrolls, the active link should change based on the section currently displayed on the screen.
-window.addEventListener('scroll', ()=>{
-  const sections = document.querySelectorAll('#heroHeader, #skills, #work, #personal');
-
-  // Loop through sections and check if they are visible
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const NAV_BAR_HEIGHT = NAV_BAR.getBoundingClientRect().height;
-    if (window.scrollY >= sectionTop - NAV_BAR_HEIGHT) {
-      const ID = section.getAttribute('id');
-      const LINK = NAV_LINKS.filter(link => {
-        return link.href.includes('#'+ID);
-      })[0];
-      console.log(LINK);
-      currentActiveLink.classList.remove(ACTIVE_LINK_CLASS);
-      LINK.classList.add(ACTIVE_LINK_CLASS);
-      currentActiveLink = LINK;
-    }
-  });
-});
-
-// Shows & hide navbar on smaller screen
-HAMBURGER_BTN.addEventListener('click', ()=>{
-  NAV_LIST.classList.toggle('nav--active');
-  if (NAV_LIST.classList.contains('nav--active')) {
-    Object.assign(document.body.style, {
-      overflowY: 'hidden'
+    const setOpen = (value, restoreFocus = false) => {
+      open = value && mobile.matches;
+      list.classList.toggle('nav--active', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      list.inert = mobile.matches && !open;
+      if (restoreFocus) toggle.focus();
+    };
+    setOpen(false);
+    toggle.addEventListener('click', () => setOpen(!open));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && open) setOpen(false, true);
     });
-    Object.assign(NAV_LIST.style, {
-      height: '100vh'
+    document.addEventListener('click', event => {
+      if (open && !nav.contains(event.target)) setOpen(false);
     });
-    return;
+    nav.addEventListener('focusout', event => {
+      if (open && event.relatedTarget && !nav.contains(event.relatedTarget)) setOpen(false);
+    });
+    links.forEach(link => link.addEventListener('click', () => setOpen(false)));
+    mobile.addEventListener('change', () => {
+      const focusWasInMenu = list.contains(document.activeElement);
+      const focusWasOnToggle = document.activeElement === toggle;
+      setOpen(false, mobile.matches && focusWasInMenu);
+      if (!mobile.matches && focusWasOnToggle) links[0]?.focus();
+    });
+
+    const sections = links.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
+    const updateActiveLink = () => {
+      const edge = nav.getBoundingClientRect().height + 18;
+      let current = sections[0];
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= edge) current = section;
+      });
+      links.forEach(link => {
+        const active = link.hash === `#${current?.id}`;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    let scheduled = false;
+    window.addEventListener('scroll', () => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => {
+        updateActiveLink();
+        scheduled = false;
+      });
+    }, { passive: true });
+    window.addEventListener('resize', updateActiveLink);
+    updateActiveLink();
   }
-  Object.assign(NAV_LIST.style, {
-    height: 0
-  });
-  Object.assign(document.body.style, {
-    overflowY: null
-  });
-});
 
-// When navbar link is clicked, reset the active state
-NAV_LINKS.forEach(link => {
-  link.addEventListener('click', ()=>{
-    resetActiveState();
-    link.blur();
-  })
-})
+  document.querySelectorAll('video').forEach(video => {
+    const source = video.querySelector('source[src]');
+    if (!source) return;
+    const fallback = document.createElement('span');
+    fallback.className = 'video__fallback';
+    fallback.hidden = true;
+    fallback.setAttribute('role', 'status');
+    fallback.append('Video unavailable. ');
+    const link = document.createElement('a');
+    link.href = source.src;
+    link.textContent = 'Open video';
+    fallback.append(link);
+    video.after(fallback);
+    // Source errors do not bubble, so listen during capture as well.
+    video.addEventListener('error', () => {
+      video.pause();
+      fallback.hidden = false;
+    }, true);
+    video.addEventListener('loadeddata', () => { fallback.hidden = true; });
+  });
 
-// Handles the hover animation on services section
-SERVICE_BOXES.forEach(service => {
-  const moveBG = (x, y) => {
-    Object.assign(currentServiceBG.style, {
-      left: x + 'px',
-      top: y + 'px',
-    })
+  const previews = [...document.querySelectorAll('.work__img-box video')];
+  const visiblePreviews = new Set();
+  const attemptedPreviews = new WeakSet();
+  const syncPreviews = () => {
+    previews.forEach(video => {
+      const visible = visiblePreviews.has(video) && !video.closest('[hidden]') && !document.hidden;
+      if (!visible || reducedMotion.matches) {
+        video.pause();
+        attemptedPreviews.delete(video);
+        return;
+      }
+      // Do not repeatedly retry blocked autoplay.
+      if (!attemptedPreviews.has(video)) {
+        attemptedPreviews.add(video);
+        video.play()?.catch(() => { /* The poster remains visible if autoplay is blocked. */ });
+      }
+    });
+  };
+  previews.forEach(video => {
+    video.controls = false;
+    if (reducedMotion.matches) video.pause();
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (isIntersecting) visiblePreviews.add(target);
+        else visiblePreviews.delete(target);
+      });
+      syncPreviews();
+    }, { threshold: 0.15 });
+    previews.forEach(video => observer.observe(video));
   }
-  service.addEventListener('mouseenter', (e) => {
-    if (currentServiceBG === null) {
-      currentServiceBG = service.querySelector('.service-card__bg');
-    }
-    moveBG(e.clientX, e.clientY);
-  });
-  service.addEventListener('mousemove', (e) => {
-    const LEFT = e.clientX - service.getBoundingClientRect().left;
-    const TOP = e.clientY - service.getBoundingClientRect().top;
-    moveBG(LEFT, TOP);
-  });
-  service.addEventListener('mouseleave', () => {
-    const IMG_POS = service.querySelector('.service-card__illustration')
-    const LEFT = IMG_POS.offsetLeft + currentServiceBG.getBoundingClientRect().width;
-    const TOP = IMG_POS.offsetTop + currentServiceBG.getBoundingClientRect().height;
+  reducedMotion.addEventListener('change', syncPreviews);
+  document.addEventListener('visibilitychange', syncPreviews);
 
-    moveBG(LEFT, TOP);
-    currentServiceBG = null;
+  const tabs = [...document.querySelectorAll('.project-tab')];
+  const selectTab = selected => {
+    tabs.forEach(tab => {
+      const active = tab === selected;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      if (panel) {
+        panel.hidden = !active;
+        panel.classList.toggle('active', active);
+      }
+    });
+    syncPreviews();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+      if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+      if (event.key === 'Home') next = tabs[0];
+      if (event.key === 'End') next = tabs[tabs.length - 1];
+      if (next) {
+        event.preventDefault();
+        selectTab(next);
+        next.focus();
+      }
+    });
   });
-});
 
-// Handles smooth scrolling
-new SweetScroll({
-  trigger: '.nav__list-link',
-  easing: 'easeOutQuint',
-  offset: NAV_BAR.getBoundingClientRect().height - 80
-});
-
-// Switch between project tabs in Personal Projects section
-function switchProjectTab(tab) {
-  // Remove active class from all tabs and content
-  document.querySelectorAll('.project-tab').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.project-content').forEach(content => content.classList.remove('active'));
-  
-  // Add active class to clicked tab and corresponding content
-  document.querySelector(`.project-tab[data-tab="${tab}"]`).classList.add('active');
-  document.getElementById(tab === 'engine' ? 'engineContent' : 'gameplayContent').classList.add('active');
-}
+  document.querySelectorAll('.service-card__box').forEach(service => {
+    const background = service.querySelector('.service-card__bg');
+    if (!background) return;
+    service.addEventListener('pointermove', event => {
+      const bounds = service.getBoundingClientRect();
+      background.style.left = `${event.clientX - bounds.left}px`;
+      background.style.top = `${event.clientY - bounds.top}px`;
+    });
+  });
+})();
